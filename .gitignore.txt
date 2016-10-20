@@ -1,0 +1,14 @@
+.DS_Store
+*.aux
+*.log
+*.lof
+*.out
+*.synctex.gz
+*.bcf
+*.toc
+*.bbl
+*.bcf
+*.blg
+*.glsdef
+sample.bib
+
