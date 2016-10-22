@@ -9,6 +9,25 @@ The aim of the project called PowerEnJoy is to provide a car-sharing service tha
 
 %Identifies the product and application domain
 %Analysis of the world and of the shared phenomena
+\subsection{Actors} \label{subsec:actors}
+\begin{itemize}
+\item VISITOR: the person who visits the systems but that are not log-in in the site, he can only see the home page, the page with the form for the registration, where he must provide all the requested information, and he has the possibility to log-in with the password given by the system when the registration is successfully committed. 
+\item USER: the person who has successfully log-in, he can do all the operations provided by the system through the user interface such as reserve a car or consult the list of available cars or say to the system that he is nearby the reserved car. 
+\end{itemize}
+
+\subsection{Goals} \label{subsec:goals}
+\begin{itemize}
+\item The system must be able to allow the visitor to register giving to him the correct form and verifying the correctness of the information that are provided by him.
+\item The system must be able to allow the visitor to log-in, first of all checking if the user is registered and after comparing username and password written in the form with the ones saved in the database: only if all the information are correct the user can access to the system, otherwise the page said there is an error and what type of error is.
+\item The system must be able to provide to the user the list of available cars near his position or a specific location.
+\item The system must be able to allow the user to reserve a car up to one hour before it is picked up.
+\item The system must be able to know when the user is nearby the reserved car and unlock it; as soon as the engine ignites, the system started charging the user and keep informed the user trough a display in the car.
+\item If the user not pick up the car after one hour from the registration, the system delete the registration giving a fee of 1 euro to the user and make the car available.
+
+MANCANO ALTRI GOAL
+
+\end{itemize}
+
 
 \subsection{Definitions, acronyms, abbreviations} \label{subsec:def}
 
