@@ -10,39 +10,86 @@ The aim of the project called PowerEnJoy is to provide a car-sharing service tha
 %Identifies the product and application domain
 %Analysis of the world and of the shared phenomena
 \subsection{Actors} \label{subsec:actors}
+Here there are a list of the actors who can operate with the system.
 \begin{itemize}
-\item VISITOR: the person who visits the systems but that are not log-in in the site, he can only see the home page, the page with the form for the registration, where he must provide all the requested information, and he has the possibility to log-in with the password given by the system when the registration is successfully committed. 
-\item USER: the person who has successfully log-in, he can do all the operations provided by the system through the user interface such as reserve a car or consult the list of available cars or say to the system that he is nearby the reserved car. 
+\item[\textbf{->}] VISITOR: the person who visits the systems but that are not log-in in the site, he can only see the home page, the page with the form for the registration, where he must provide all the requested information, and he has the possibility to log-in with the password given by the system when the registration is successfully committed. 
+\item[\textbf{->}] USER: the person who has successfully log-in, he can do all the operations provided by the system through the user interface such as reserve a car or consult the list of available cars or say to the system that he is nearby the reserved car. 
 \end{itemize}
 
 \subsection{Goals} \label{subsec:goals}
+In this section we want to explain exhaustively what are our system's goal.
 \begin{itemize}
-\item The system must be able to allow the visitor to register giving to him the correct form and verifying the correctness of the information that are provided by him.
-\item The system must be able to allow the visitor to log-in, first of all checking if the user is registered and after comparing username and password written in the form with the ones saved in the database: only if all the information are correct the user can access to the system, otherwise the page said there is an error and what type of error is.
+\item The system must be able to allow visitor to register.
+\item The system must be able to give a password to a visitor successfully registered.
+\item The system must be able to verify the payment information given by the user.
+\item The system must be able to allow visitor to log in.
+\item The system must be able to know the position of a user.
+\item The system must be able to know the position of a specific car and if it is in a safe area.
 \item The system must be able to provide to the user the list of available cars near his position or a specific location.
-\item The system must be able to allow the user to reserve a car up to one hour before it is picked up.
-\item The system must be able to know when the user is nearby the reserved car and unlock it; as soon as the engine ignites, the system started charging the user and keep informed the user trough a display in the car.
-\item If the user not pick up the car after one hour from the registration, the system delete the registration giving a fee of 1 euro to the user and make the car available.
+\item The system must be able to allow user to reserve a car up to one hour before it is picked up.
+\item The system must be able to know when the user is nearby the reserved car.
+\item If the user is near his reserved car the system must unlock it.
+\item The system must know when the engine of a specific car ignites.
+\item As soon as the engine ignites, the system must be able to charge the user.
+\item The system must be able to keep informed the user about the charge trough a display in the car.
+\item If the user not pick up the car after one hour from the registration, the system must be able to delete the registration giving a fee of 1 euro to the user.
+\item The system must allow user to delete a reservation before one hour is passed.
+\item If a registration is deleted the system must be able to make the car available.
+\item The system must have a list of all the safe areas in which the user can park the car after using it.
+\item When a car is parked in a safe area and the user exit from it, the system must be able to lock the car and stop charging  the user.
+\item The system must have a list of possible discount to apply to the user.
+\item The system must recognize how many people there are in a specific car for applying or not a specific discount.
+\item The system must know, when a car is left, how many battery is used for applying or not a specific discount.
+\item The system must know if the car is plugged into the power grid for applying or not a specific discount.
+\item The system must be able to apply an increase to the amount of a ride if is verified a specific case.
 
-MANCANO ALTRI GOAL
 
 \end{itemize}
 
 
-\subsection{Definitions, acronyms, abbreviations} \label{subsec:def}
+\subsection{Definitions, acronyms, abbreviations} \label{subsec:def-ac-ab}
 
+\subsubsection{Definitions} \label{def}
+This section is necessary for avoid ambiguity or misunderstanding during the reading of this document. 
+\begin{itemize}
+\item VISITOR: is a person that is not register in the system, he can only see the homepage and go to the form for the registration.
+\item USER: is a person that is register in the system; he is identified by a name, surname, nickname, e-mail, password ( given by the system at the end of the registration ), telephone number, address and all the payment information such as number of credit card and card's deadline that must be verified by the system. He can do all the services that are provided by "\emph{PowerEnJoy}".
+\item CAR: we intend an electric car that can be shared trough the system. It can be available or reserved and the system will lock and unlock it when is necessary. It is parked in a safe area.
+\item RIDE: with this term we intend all the route that a user accomplishes with the same car from the moment when he pick up the car to the moment when I left it in a safe area.   
+\item CHARGE: we intend the debt that the user must pay at the end of a ride; it is calculate from a specific amount of money per minute which start from the begin of the ride to the end of it. That can be also modified  by some discount, if is verified a particular situation, or a fee. Exists also a charge if the user reserve a car but he don't pick it up after one hour from the reservation.  
+
+\end{itemize}
+
+\subsubsection{Acronyms} \label{acr}
 Here there is the acronims list:
 
 %------------Acronyms----------
 \begin{acronym}[RASD] %put here the first acronym
 
-\acro{rads}[RASD]{Requirements Analysis and Specifications Document}
+\acro{rasd}[RASD]{Requirements Analysis and Specifications Document}
+\acro{uml}[UML]{Unified Modeling Language}
 %lists of used acronyms
 
 \end{acronym}
 
+\subsubsection{Abbreviations} \label{abbre}
+
 
 \subsection{Overview} \label{subsec:overview}
-
+This document is structured in four parts:
+\begin{itemize}
+\item[\textbf{Part 1}]In the first part there is an introduction with this document’s purpose, the scope of this project and its aim, the actor that can use  the system and in which way, some definitions to avoid misunderstanding during the reading of the document and, most important, the goal of our project described all in brief but comprehensive way.  
+\item[\textbf{Part 2}]In the second part there are more specifications about the requirements, the interfaces with external agents, constraints and assumptions.
+\item[\textbf{Part 3}]The third part is very important because there are all the models for the requirement: they are modeled using UML diagrams such as \emph{Use Case} and \emph{Sequence Diagram} and using Alloy. They are very important to understand all the functionality of the system.  
+\item[\textbf{Part 4}]In this part there is the Appendix with other informations and the hour spended by all of us to make this document.
+\end{itemize}
 %￼￼Describes contents and structure of the remainder of the RASD
+
+\subsection{Reference Documents} \label{ref-doc}
+\begin{itemize}
+\item[\textbf{--}] Specification document: Assignments AA 2016-2017.pdf
+\item[\textbf{--}]Standard for RASD: IEEE Std 29148-2011
+\end{itemize}
+
+
 
