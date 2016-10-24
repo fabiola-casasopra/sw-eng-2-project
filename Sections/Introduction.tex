@@ -2,19 +2,19 @@
 In this chapter there are the main purpose of this document, the project's scope and its actors and goals, some definitions who help to understand the content of the document and some reference documents that are used to make this one. 
 
 \subsection{Purpose} \label{subsec:purpose}
-This document is called \emph{Requirements Analysis and Specification Document} also knowed as the acronym RASD. It's purpose is to communicate to customers what is understanding about functional and not-functional requirements based, the limitations and obstacles for implement this system, the constraints founded and for modeling the customer's need. This document is also addressed to developers and programmers who have to implements all the requirements then it must be more complete and correct than possible. It is a contract with customers therefore it must show use cases to allow everyone to understand what the system will do and in what domain it can be used. Project manager can use this document to make an evaluation of costs and size of the project.
+This document is called \emph{\acl{rasd}}, also knowed as the acronym \acs{rasd}. Its purpose is to communicate to customers what is understanding about functional and not-functional requirements based, the limitations and obstacles for implement this system, the constraints founded and for modeling the customer's need. This document is also addressed to developers and programmers who have to implements all the requirements then it must be more complete and correct than possible. It is a contract with customers therefore it must show use cases to allow everyone to understand what the system will do and in what domain it can be used. Project manager can use this document to make an evaluation of costs and size of the project.
 
 
 \subsection{Scope} \label{subsec:scope}
-The aim of the project called PowerEnJoy is to provide a car-sharing service that involves only electric cars. All people who wants to share a car must be able to register at the system using credentials such as name, surname, e-mail, nickname and giving a valid information payment (number of credit card) that is needed to pay for the service. When the user receive the password to log in, he can find available cars in a specific location and, if he want, he can reserve it. The system unlocks the car as soon as the user is nearby and keep informed of the amount of the service with a screen on the car; when the car is in one of the safe areas, indicated in a list that can be consulted on-line, the system locks it after the person exit from it. The project has also the purpose to encouraged people to left at home their pollutants cars and takes with other people the electric car: in fact if there are at least two passengers with the driver he has a 10 per cent discount on the ride. If the user left the car in the safe area with more than half of the battery he has a 20 per cent discount on the ride and if he recharged the car he will have 30 per cent discount. But if the user left the car far away from a safe area or with more than 80 per cent of empty battery, the system charge 30 per cent more on the ride.
+The aim of the project called PowerEnJoy is to provide a car-sharing service that involves only electric cars. All people who wants to share a car must be able to register at the system using credentials such as name, surname, e-mail, nickname and giving a valid information payment (number of credit card) that is needed to pay for the service. When the user receive the password to log in, he can find available cars in a specific location and, if he wants, he can reserve it. The system unlocks the car as soon as the user is nearby and keep informed of the amount of the service with a screen on the car; when the car is in one of the safe areas, indicated in a list that can be consulted on-line, the system locks it after the person exit from it. The project has also the purpose to encouraged people to left at home their pollutants cars and takes with other people the electric car: in fact if there are at least two passengers with the driver he has a 10 per cent discount on the ride. If the user leaves the car in the safe area with more than half of the battery he has a 20 per cent discount on the ride and if he recharged the car he will have 30 per cent discount. But if the user leaves the car far away from a safe area or with more than 80 per cent of empty battery, the system charges 30 per cent more on the ride.
 
 %Identifies the product and application domain
 %Analysis of the world and of the shared phenomena
 \subsection{Actors} \label{subsec:actors}
 Here there are a list of the actors who can operate with the system.
 \begin{itemize}
-\item[\textbf{->}] VISITOR: the person who visits the systems but that are not log-in in the site, he can only see the home page, the page with the form for the registration, where he must provide all the requested information, and he has the possibility to log-in with the password given by the system when the registration is successfully committed. 
-\item[\textbf{->}] USER: the person who has successfully log-in, he can do all the operations provided by the system through the user interface such as reserve a car or consult the list of available cars or say to the system that he is nearby the reserved car. 
+\item[\textbf{->}] VISITOR: the person who visits the systems but that is not log-in in the site, he can only see the home page and the page with the form for the registration, where he must provide all the requested information. Moreover, he has the possibility to log-in with the password given by the system when the registration is successfully committed. 
+\item[\textbf{->}] USER: the person who has successfully log-in. He can do all the operations provided by the system through the user interface such as reserve a car or consult the list of available cars or say to the system that he is nearby the reserved car. 
 \end{itemize}
 
 \subsection{Goals} \label{subsec:goals}
@@ -53,11 +53,11 @@ In this section we want to explain exhaustively what are our system's goal.
 \subsubsection{Definitions} \label{def}
 This section is necessary for avoid ambiguity or misunderstanding during the reading of this document. 
 \begin{itemize}
-\item VISITOR: is a person that is not register in the system, he can only see the homepage and go to the form for the registration.
-\item USER: is a person that is register in the system; he is identified by a name, surname, nickname, e-mail, password ( given by the system at the end of the registration ), telephone number, address and all the payment information such as number of credit card and card's deadline that must be verified by the system. He can do all the services that are provided by "\emph{PowerEnJoy}".
+\item VISITOR: he is a person that is not register in the system, he can only see the homepage and go to the form for the registration.
+\item USER: he is a person that is registered in the system; he is identified by a name, surname, nickname, e-mail, password (given by the system at the end of the registration), telephone number, address and all the payment information such as number of credit card and card's deadline that must be verified by the system. He can do all the services that are provided by "\emph{PowerEnJoy}".
 \item CAR: we intend an electric car that can be shared trough the system. It can be available or reserved and the system will lock and unlock it when is necessary. It is parked in a safe area.
 \item RIDE: with this term we intend all the route that a user accomplishes with the same car from the moment when he pick up the car to the moment when I left it in a safe area.   
-\item CHARGE: we intend the debt that the user must pay at the end of a ride; it is calculate from a specific amount of money per minute which start from the begin of the ride to the end of it. That can be also modified  by some discount, if is verified a particular situation, or a fee. Exists also a charge if the user reserve a car but he don't pick it up after one hour from the reservation.  
+\item CHARGE: we intend the debt that the user must pay at the end of a ride; it is calculate from a specific amount of money per minute which start from the begin of the ride to the end of it. That can be also modified  by some discount, if is verified a particular situation, or a fee. It exists also a charge if the user reserve a car but he don't pick it up after one hour from the reservation.  
 
 \end{itemize}
 
@@ -83,8 +83,8 @@ This document is structured in four parts:
 \begin{itemize}
 \item[\textbf{Part 1}]In the first part there is an introduction with this document’s purpose, the scope of this project and its aim, the actor that can use  the system and in which way, some definitions to avoid misunderstanding during the reading of the document and, most important, the goal of our project described all in brief but comprehensive way.  
 \item[\textbf{Part 2}]In the second part there are more specifications about the requirements, the interfaces with external agents, constraints and assumptions.
-\item[\textbf{Part 3}]The third part is very important because there are all the models for the requirement: they are modeled using UML diagrams such as \emph{Use Case} and \emph{Sequence Diagram} and using Alloy. They are very important to understand all the functionality of the system.  
-\item[\textbf{Part 4}]In this part there is the Appendix with other informations and the hour spended by all of us to make this document.
+\item[\textbf{Part 3}]The third part is very important because there are all the models for the requirement: they are modeled using \acs{uml} diagrams such as \emph{Use Case} and \emph{Sequence Diagram} and using Alloy. They are very important to understand all the functionality of the system.  
+\item[\textbf{Part 4}]In this part there is the Appendix with other informations and the hour spent by all of us to make this document.
 \end{itemize}
 %￼￼Describes contents and structure of the remainder of the RASD
 
@@ -92,8 +92,12 @@ This document is structured in four parts:
 
 \begin{itemize}
 \item[\textbf{--}] Specification document: Assignments AA 2016-2017.pdf
-\item[\textbf{--}] Standard for RASD: IEEE Std 29148-2011
-\item[\textbf{--}] API information: \url{https://developers.google.com/maps/documentation/geolocation/intro}
+\item[\textbf{--}] Standard for \acs{rasd}: IEEE Std 29148-2011
+\item[\textbf{--}] \acs{api} information: 
+\url{https://developers.google.com/maps/}
+
+\url{documentation/geolocation/intro}
+
 \end{itemize}
 
 
