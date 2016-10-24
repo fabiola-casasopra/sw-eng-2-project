@@ -1,6 +1,8 @@
 \section{Overall Description} \label{sec:description}
+In this chapter we explain the product prospective and major functionality and the characteristic of the user that we image will use this application. We also write all the constraints we have found and all the assumptions that we have make because the requirements are not very clear in all its parts. 
 
 \subsection{Product perspective} \label{subsec:prod_persp}
+Our application is a self-contained product based on a client interface that help the user to use this applications. It used an API for the geolocation provided by \emph{\textbf{Google Maps}} because we need to know the car and user's position. It is supported by common browser such as "\emph{Chrome}". It is also closely linked with a DB that contains all user and car data and the list of safe areas.
 
 %Describes external interfaces: system, user, hardware, software; also operations and site adaptation, and hardware constraints
 
@@ -11,14 +13,28 @@
 %￼Summary of major functions, requirements
 
 \subsection{User characteristics} \label{subsec:user_char}
+The user we expect will use our application is a person that want to share a car every time near his position, in an efficient and  rapid way; he is also a person who is interested in the problem of pollution because our system involves only electric car. Our application doesn't require a particular ability in using IT equipment in fact he must only be able to insert his credential for registration and log in and set the position from where he wants to share the car. Thanks to the position, the system will do all the operation to lock and unlock the car and charge the user.
 
 %Anything that is relevant to clarify their needs
 
 \subsection{Constraints} \label{subsec:constraints}
+Our software must be used at the same time by a lot of user; it mustn't consume a lot of battery and memory. It is very important that is followed a policy of privacy in fact, if the user doesn't sign and approve the warranty of privacy the system can't be used. The privacy's policy is very important and is a constraint for the system develop because for the use of the application we must know the position of the user and that can't be done without the approval of the user. Another constraint is that, since we use a Google API, we must follow its regulation and developer guide.
 
 %Anything that will limit the developer’s options (e.g. regulations, reliability, criticality, hardware limitations, parallelism, etc)
 
 \subsection{Assumptions and Dependencies} \label{subsec:dependencies}
-
+\begin{enumerate}
+\item There isn't a privileged user: all the users can done the same things and there isn't a limitation in system's use.
+\item The visitors can only see the homepage, the registration's form and the log in page.
+\item There isn't dependency from users.
+\item A user can't reserve two cars at the same hour at the same day: he can reserve only one car each time.
+\item There is a user's page with the payment history: so the user can see all details for a specific payment because all the operation must be clear. This is a warranty of correctness between system's owner and users.
+\item When a reservation is deleted because is passed one hour, the user is informed trough a notification like this: "The reservation for car X at the hour Y for the day Z is deleted because is passed one hour. You must pay a fee of 1 euro.".
+\item In the list of available cars is specified the car model with all the details so the user can select the best one for his need. It is also indicate whether the vehicle is suitable for the transport of disabled persons.
+\item During the reservation there is the possibility to set a remainder to avoid to forget the reservation.
+\item In the site there is a list of possible discount and its details.
+\item During the reservation the system provides the possibility to insert credential to make invoice 
+for tax deduction or reimbursement of expenses.
+\end{enumerate}
 %domain assumptions
 
