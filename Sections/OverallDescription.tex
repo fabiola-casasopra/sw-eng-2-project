@@ -2,7 +2,7 @@
 In this chapter we explain the product prospective and major functionality and the characteristic of the user that we image will use this application. We also write all the constraints we have found and all the assumptions that we have made because the requirements are not very clear in all their parts. 
 
 \subsection{Product perspective} \label{subsec:prod_persp}
-Our application is a self-contained product based on a client interface that helps the user to use this applications. It uses an \acs{api} for the geolocation provided by \emph{\textbf{Google Maps}} because we need to know the car and user's position. It is supported by common browser such as "\emph{Chrome}". It is also closely linked with a \acs{db} that contains all user and car data and the list of safe areas.
+Our application is a self-contained product based on a client interface that helps the user to use this applications. It uses an \acs{api} for the geolocation provided by \emph{\textbf{Google Maps}} because we need to know the car and user's position. It is supported by common browser such as "\emph{Chrome}". It is also closely linked with a \acs{db} that contains all user and car data and the list of safe areas. Because of our assumptions, the system must collaborate with the motorization's system to check user's driving license.
 
 %Describes external interfaces: system, user, hardware, software; also operations and site adaptation, and hardware constraints
 
@@ -35,6 +35,8 @@ Our software must be used at the same time by a lot of user; it mustn't consume 
 \item In the site there is a list of possible discount and its details.
 \item During the reservation the system provides the possibility to insert credential to make invoice 
 for tax deduction or reimbursement of expenses.
+\item During the registration we ask the user to insert his driving license's number: in this way the system can verify if it is valid or not.
+\item The system provides the opportunity to receive trough the e-mail the password, if the user doesn't remember it.
 \end{enumerate}
 %domain assumptions
 

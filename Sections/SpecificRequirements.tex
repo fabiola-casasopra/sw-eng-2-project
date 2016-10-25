@@ -13,16 +13,127 @@
 \subsubsection{Communication Interfaces} \label{comm_interfaces}
 
 \subsection{Functional Requirements} \label{sec:funct_requirements}
+In this section we explain all the functional requirements necessary to reach a specific goal. For each goal that was mentioned in the first section here we write its requirements.
+\begin{itemize}
+\item[\textbf{G1}]: 
+\begin{itemize}
+\item[--R1--] During the registration visitors can't choose an username already in use.
+\item[--R2--] During the registration visitors can't choose an e-mail already in use.
+\item[--R3--] During the registration visitors must insert valid credit card's information.
+\item[--R4--] During the registration visitors must insert a valid driving license.
+\item[--R5--] During the registration visitors must agree with the privacy conditions to use the system.
+\end{itemize}
 
-%Definition of use case diagrams, use cases and associated sequence/activity diagrams
+\item[\textbf{G2}]:
+\begin{itemize}
+\item[--R1--] The registration must be successfully completed.
+\end{itemize}
 
-%this section organized by mode, user class, feature, etc. For example:
-%\subsubsection{User Class 1}
-%paragraph{Functional Requirement 1.1}
-%...
-%\subsubsection{User Class 2}
-%paragraph{Functional Requirement 2.1}
-%...
+\item[\textbf{G3}]:
+\begin{itemize}
+\item[--R1--] The user must be registered at the system.
+\item[--R2--] In the log in form the user must insert the correct username.
+\item[--R3--] In the log in form the user must insert the correct password.
+\item[--R4--] If the visitor insert the wrong data, the system shows an error and return to the log in page.
+\item[--R5--] If the user doesn't remember the password he can receive it trough a special command.
+\end{itemize}
+
+\item[\textbf{G4}]:
+\begin{itemize}
+\item[--R1--] The user must insert a valid address or give to the system his position.
+\item[--R2--] All cars position must be knowed.
+\item[--R3--] All cars are set as available or not.
+\item[--R4--] The list of nearest cars is made trough calculate the distance between car and user's position.
+\end{itemize}
+
+\item[\textbf{G5}]:
+\begin{itemize}
+\item[--R1--] The user must be correctly logged in.
+\item[--R2--] The user must select which car he wants.
+\item[--R3--] The user must select only date and times valid for the reservation.
+\end{itemize}
+
+\item[\textbf{G6}]:
+\begin{itemize}
+\item[--R1--] The position of the user and the car must be the same.
+\item[--R2--] The reservation must not be expired.
+\item[--R3--] The system must recognize the correct car reserved by a specific user to unlock the correct one.
+\end{itemize}
+
+\item[\textbf{G7}]:
+\begin{itemize}
+\item[--R1--] The car's engine must ignites.
+\item[--R2--] An amount of money per minute is set.
+\item[--R3--] The final charge is based on the duration of the car use.
+\end{itemize}
+
+\item[\textbf{G8}]:
+\begin{itemize}
+\item[--R1--] There must be a display on the car that communicates with the system.
+\item[--R2--] The charge is update every minute.
+\end{itemize}
+
+\item[\textbf{G9}]:
+\begin{itemize}
+\item[--R1--] It must be passed one hour from the registration.
+\item[--R2--] Is applyed a fee of 1 euro to the user involved.
+\item[--R3--] The reservation is deleted.
+\end{itemize}
+
+\item[\textbf{G10}]:
+\begin{itemize}
+\item[--R1--] The user must be correctly logged in.
+\item[--R2--] The user must go to the reservation page.
+\item[--R3--] Mustn't be passed one hour from the reservation.
+\end{itemize}
+
+\item[\textbf{G11}]:
+\begin{itemize}
+\item[--R1--] The reservation is correctly deleted by a user or it is expired. 
+\item[--R2--] The car is set available in the list.
+
+\end{itemize}
+
+\item[\textbf{G12}]:
+\begin{itemize}
+\item[--R1--] A list of safe areas must be available to the user.
+\item[--R2--] The car must be left in a safe area.
+\item[--R3--] The user and all any passengers must exit from the car.
+\end{itemize}
+
+\item[\textbf{G13}]:
+\begin{itemize}
+\item[--R1--] The car must be used by a user.
+\item[--R2--] Discounts are in a list where is defined all details.
+\item[--R3--] In the car there is a sensor which counts how many people there are in the car, if they are three or more a discount is applied.
+\item[--R4--] In the car there is a sensor which controls how many battery is empty, if it is no more than 50 per cent the system applied a discount.
+\item[--R5--] If the user takes care to link the car to recharge the car he will have a discount.
+\end{itemize}
+
+\item[\textbf{G14}]:
+\begin{itemize}
+\item[--R1--] The car must have been recently used.
+\item[--R2--] Most of 80 per cent of the battery is empty.
+\item[--R3--] The car is left far away from a safe area.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}
+
+
+
 
 \subsection{Performance Requirements} \label{sec:perf_requirements}
 

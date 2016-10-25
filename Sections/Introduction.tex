@@ -20,29 +20,20 @@ Here there are a list of the actors who can operate with the system.
 \subsection{Goals} \label{subsec:goals}
 In this section we want to explain exhaustively what are our system's goal.
 \begin{itemize}
-\item The system must be able to allow visitor to register.
-\item The system must be able to give a password to a visitor successfully registered.
-\item The system must be able to verify the payment information given by the user.
-\item The system must be able to allow visitor to log in.
-\item The system must be able to know the position of a user.
-\item The system must be able to know the position of a specific car and if it is in a safe area.
-\item The system must be able to provide to the user the list of available cars near his position or a specific location.
-\item The system must be able to allow user to reserve a car up to one hour before it is picked up.
-\item The system must be able to know when the user is nearby the reserved car.
-\item If the user is near his reserved car the system must unlock it.
-\item The system must know when the engine of a specific car ignites.
-\item As soon as the engine ignites, the system must be able to charge the user.
-\item The system must be able to keep informed the user about the charge trough a display in the car.
-\item If the user not pick up the car after one hour from the registration, the system must be able to delete the registration giving a fee of 1 euro to the user.
-\item The system must allow user to delete a reservation before one hour is passed.
-\item If a registration is deleted the system must be able to make the car available.
-\item The system must have a list of all the safe areas in which the user can park the car after using it.
-\item When a car is parked in a safe area and the user exit from it, the system must be able to lock the car and stop charging  the user.
-\item The system must have a list of possible discount to apply to the user.
-\item The system must recognize how many people there are in a specific car for applying or not a specific discount.
-\item The system must know, when a car is left, how many battery is used for applying or not a specific discount.
-\item The system must know if the car is plugged into the power grid for applying or not a specific discount.
-\item The system must be able to apply an increase to the amount of a ride if is verified a specific case.
+\item[\textbf{G1}] The system must be able to allow visitor to register.
+\item[\textbf{G2}] The system must be able to give a password to a visitor successfully registered.
+\item[\textbf{G3}] The system must be able to allow visitor to log in.
+\item[\textbf{G4}] The system must be able to provide to the user the list of available cars near his position or a specific location.
+\item[\textbf{G5}] The system must be able to allow user to reserve a car up to one hour before it is picked up.
+\item[\textbf{G6}] If the user is near his reserved car the system must unlock it.
+\item[\textbf{G7}] The system must be able to charge the user.
+\item[\textbf{G8}] The system must be able to keep informed the user about the charge trough a display in the car.
+\item[\textbf{G9}] If the user not pick up the car after one hour from the registration, the system must be able to delete the registration giving a fee of 1 euro to the user.
+\item[\textbf{G10}] The system must allow user to delete a reservation before one hour is passed.
+\item[\textbf{G11}] If a registration is deleted the system must be able to make the car available.
+\item[\textbf{G12}] The system must lock a car when it is left in a safe area.
+\item[\textbf{G13}] The system must be able to apply discount if is verified one case.
+\item[\textbf{G14}] The system must be able to apply an increase to the amount of a ride if is verified a specific case.
 
 
 \end{itemize}
@@ -76,12 +67,16 @@ Here there is the acronims list:
 \end{acronym}
 
 \subsubsection{Abbreviations} \label{abbre}
+\begin{itemize}
+\item \textbf{Gn} : indicates the goal's number
+\item \textbf{Rn} : indicates the requirement's number for a specific goal
+\end{itemize}
 
 
 \subsection{Overview} \label{subsec:overview}
 This document is structured in four parts:
 \begin{itemize}
-\item[\textbf{Part 1}]In the first part there is an introduction with this document’s purpose, the scope of this project and its aim, the actor that can use  the system and in which way, some definitions to avoid misunderstanding during the reading of the document and, most important, the goal of our project described all in brief but comprehensive way.  
+\item[\textbf{Part 1}]In the first part there is an introduction with this document's purpose, the scope of this project and its aim, the actor that can use  the system and in which way, some definitions to avoid misunderstanding during the reading of the document and, most important, the goal of our project described all in brief but comprehensive way.  
 \item[\textbf{Part 2}]In the second part there are more specifications about the requirements, the interfaces with external agents, constraints and assumptions.
 \item[\textbf{Part 3}]The third part is very important because there are all the models for the requirement: they are modeled using \acs{uml} diagrams such as \emph{Use Case} and \emph{Sequence Diagram} and using Alloy. They are very important to understand all the functionality of the system.  
 \item[\textbf{Part 4}]In this part there is the Appendix with other informations and the hour spent by all of us to make this document.
