@@ -257,45 +257,34 @@ In this section we explain all the functional requirements necessary to reach a 
 \item[--R2--] Most of 80 per cent of the battery is empty.
 \item[--R3--] The car is left far away from a safe area.
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \end{itemize}
+
+\subsection{Scenario Identification} \label{sec:scenarios}
+\subsubsection{Scenario 1: Registration and Log in} \label{sce1}
+Monica is a ecologist girl who everyday goes at work by train because her work place is attainable only by train or by car. One day she goes to the train station but there is a strike, she is desperate: how can she go to work? Talking with other people in the station she learns that exists a car-sharing that provides only electric cars and that she can reserve a car trough an application on her mobile phone, this application is "\textit{PowerEnJoy}". She quickly goes to the web site and download the app but to use it she must register giving some data, her driving license number and her credit card information; she insert all the correct data and as soon as she press the registration button in her mail box arrives a new e-mail with a password to access the system: she is now a new user. In the log in page she insert her username and the password recieved so she can easily enter in the system.
+\subsubsection{Scenario 2: Reserve a car} \label{sce2}
+Monica is now in her personal page where she can change the password or insert a picture to personalize her profile. She quickly goes to the reservation page and she finds that is very simple to use: she only must insert a position and the system will search for an available car nearby. In the box she can insert her specific position activating her Smartphone GPS or insert a different one: she chooses the first option. In the map on the reservation page appear immediately two cars that are available, when she select one of them she can see a curtain with the time distance between her and the car, the car's level of the battery and its status like "charging". She choose the best one and pressed the button "\textbf{\textit{Reserve!}}": immediately the reservation is confirmed and appears a timer to remind her that she has one hour to pick up the car; following the map she goes towards the car. 
 
 
 
 
 \subsection{Performance Requirements} \label{sec:perf_requirements}
+Performance must be acceptable to garantee a quiet good level of usability, in fact we supposed the time between the reservation confirmation and the timer start is equal to zero as well as the time between the user arrival near the car and its unlock. The system performance is closely linked with user internet connection and so indipendent from our develop.
 
 \subsection{Design Constraints} \label{sec:design_constr}
-
-\subsubsection{Standards compliance} \label{std_compliance}
-
-\subsubsection{Hardware limitations} \label{hw_limitations}
-
-\subsubsection{etc...}
+All design constraints are linked with the language used to program.
 
 \subsection{Software System Attributes} \label{sec:sw_sys_attr}
-
-\subsubsection{Reliability} \label{reliability}
-
 \subsubsection{Availability} \label{availability}
+Our system can be accessed in each time the user wants, it's only needs the internet connection so its availability is closely related to it presence. The fact that the system is always accessible does not guarantee the presence of available car: this is indipendent from our system.
 
 \subsubsection{Security} \label{security}
+The user's data are all protected by the use of password and database's cryptography trough MD5 function. The transaction must be authorized by the user's bank and all its details are consultable in a user's page called "\textit{My Transaction}" so the user can be sure that his credit card will not be used illegally.
 
 \subsubsection{Maintainability} \label{maintainability}
+The system maintainability depends on the API's develop but thanks to all the document it will be simple in the future to adapt the software to any change.
 
 \subsubsection{Portability} \label{portability}
+The application can be used to any \acs{os} so it has a very good portability.
 
 \subsection{Other Requirements} \label{other}

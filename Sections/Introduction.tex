@@ -10,6 +10,20 @@ The aim of the project called PowerEnJoy is to provide a car-sharing service tha
 
 %Identifies the product and application domain
 %Analysis of the world and of the shared phenomena
+\subsection{Domain Properties} \label{subsec:domain}
+We supposed that our domain has this properties:
+\begin{itemize}
+\item[\textbf{D1}]The nickname and the e-mail are unique to identify an user.
+\item[\textbf{D2}]The e-mail must be syntactically correct and must correspond to an existing server.
+\item[\textbf{D3}]The car's position can be knowed thanks to GPS.
+\item[\textbf{D4}]The charge is calculated considering time passed using the car, given a specific fee per minute.
+\item[\textbf{D5}]In the car there is a sensor that idicates how many people there are in the car and another sensor which indicates the battery level.
+\item[\textbf{D6}]For each car there is an insurance.
+\item[\textbf{D7}]Reservation's time must be included between 00:00 and 23:59.
+\item[\textbf{D8}]The position inserted by the user must be an existing place.
+\end{itemize}
+
+
 \subsection{Actors} \label{subsec:actors}
 Here there are a list of the actors who can operate with the system.
 \begin{itemize}
@@ -62,6 +76,7 @@ Here there is the acronims list:
 \acro{uml}[UML]{Unified Modeling Language}
 \acro{api}[API]{Application Programming Interface}
 \acro{db}[DB]{DataBase}
+\acro{os}[OS]{Operating System}
 %lists of used acronyms
 
 \end{acronym}
@@ -70,6 +85,7 @@ Here there is the acronims list:
 \begin{itemize}
 \item \textbf{Gn} : indicates the goal's number
 \item \textbf{Rn} : indicates the requirement's number for a specific goal
+\item \textbf{Dn} : indicates the domain's number
 \end{itemize}
 
 
