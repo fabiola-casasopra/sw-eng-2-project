@@ -168,6 +168,9 @@ In this section we explain all the functional requirements necessary to reach a 
 \item[\textbf{G2}]:
 \begin{itemize}
 \item[--R1--] The registration must be successfully completed.
+\item[--R2--] The user must insert the correct old password.
+\item[--R3--] The user must repeat twice the new password.
+\item[--R4--] The user must upload a valid picture.
 \end{itemize}
 
 \item[\textbf{G3}]:
@@ -206,6 +209,8 @@ In this section we explain all the functional requirements necessary to reach a 
 \item[--R1--] The car's engine must ignites.
 \item[--R2--] An amount of money per minute is set.
 \item[--R3--] The final charge is based on the duration of the car use.
+\item[--R4--] The system must shows all user's transactions.
+\item[--R5--] The user must select a specific transaction to see its details.
 \end{itemize}
 
 \item[\textbf{G8}]:
@@ -219,6 +224,7 @@ In this section we explain all the functional requirements necessary to reach a 
 \item[--R1--] It must be passed one hour from the registration.
 \item[--R2--] Is applyed a fee of 1 euro to the user involved.
 \item[--R3--] The reservation is deleted.
+\item[--R4--] In the page there is a timer.
 \end{itemize}
 
 \item[\textbf{G10}]:
@@ -257,6 +263,20 @@ In this section we explain all the functional requirements necessary to reach a 
 \item[--R2--] Most of 80 per cent of the battery is empty.
 \item[--R3--] The car is left far away from a safe area.
 \end{itemize}
+
+
+\item[\textbf{G15}]:
+\begin{itemize}
+\item[--R1--] The user must go to the specific page.
+\item[--R2--] The user must insert a correct position. 
+\end{itemize}
+
+
+\item[\textbf{G16}]:
+\begin{itemize}
+\item[--R1--] The user must go to the specific page.
+\item[--R2--] The user must insert a correct position.
+\end{itemize}
 \end{itemize}
 
 \subsection{Scenario Identification} \label{sec:scenarios}
@@ -271,8 +291,329 @@ Maria is, from a long time, using a car picked up through the "\textit{PowerEnJo
 \subsubsection{Scenario 5: Transaction} \label{sce5}
 Fabio is in a shop and, at the moment to pay, the shop assistant tell to him that he has reached the daily credit card's limit. He is furious and can not understand how it is possible, suddenly he reminds that in the morning he has picked up a car from "\textit{PowerEnJoy}" and he thinks that the system has charged him more than necessary. Fortunately in the app there is a page with the details of all the transaction; he access in his personal page and goes to the transaction's page: here there is a list and, when one of the list entry is selected, all its details appear. He selected that corresponding to the morning reservation: the charge is correct because is specified the time of car using and the amount calculates from a specified cost per minute. He has spent his money in an another way.
 \subsubsection{Scenario 6: Reservation expired} \label{sce6}
-Giusy telephone starts ringing: is her best friend who tells that she not need to share a car because someone will go to get her. Giusy has already make a car reservation but she knows that she can delete it without problems because in the app reservation page there is a button specific to do this action. "There is no hurry" thinks Giusy so she continues to do her work: she has forget that the reservation will last only one hour. After a lot of time she remember that has not delete the car reservation yet so she takes her computer and goes to the site but when she arrives at the reservation's page there is a surprise: the timer strikes 00:00 and there is a red written " The reservation time is expired. You will be charged 1 euro fee.". Next time she will pay more attention.   
+Giusy telephone starts ringing: is her best friend who tells that she not need to share a car because someone will go to get her. Giusy has already make a car reservation but she knows that she can delete it without problems because in the app reservation page there is a button specific to do this action. "There is no hurry" thinks Giusy so she continues to do her work: she has forget that the reservation will last only one hour. After a lot of time she remember that has not delete the car reservation yet so she takes her computer and goes to the site but when she arrives at the reservation's page there is a surprise: the timer strikes 00:00 and there is a red written " The reservation time is expired. You will be charged 1 euro fee.". Next time she will pay more attention. 
+\clearpage  
 
+\subsection{UML Models}
+\subsubsection{Use Case Diagram}
+
+The Figure \ref{fig:use case} shows the actors involved in the system, how they relate with it and all the ways in which they can use the functionalities provided by "\textit{PowerEnJoy}".  
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Images/UML/UseCase}
+\caption{Use Case Diagram}
+\label{fig:use case}
+\end{figure}
+\clearpage
+
+\subsubsection{Use Case Description}
+\myparagraph{Registration}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & Visitor \\ \hline
+Goal & \textbf{G1} \\ \hline
+Requirements Associated & G1.\textbf{R1},G1.\textbf{R2},G1.\textbf{R3},G1.\textbf{R4},G1.\textbf{R5} \\ \hline
+Precondition & The Visitor reach the registration form after access the application home page \\ \hline
+Trigger & The Visitor has press the "Register Now!" button \\ \hline
+Successful end condition & The Visitor is now a new User \\ \hline
+Failed end condition & The Visitor is requested to try again because an error occurs \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The Visitor completes the registration form with all the necessary data.
+\item The Visitor submits the form.
+\item The system verifies that nickname and e-mail are not in used.
+\item The system saves all the visitor's data in the database.
+\item The system shows a confirmation message.
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions & "See the registration form" \\ \hline
+\end{tabular}
+\caption{Registration Use Case}
+\end{center}
+\end{table}
+\clearpage
+
+\myparagraph{Log In}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & Visitor \\ \hline
+Goal & \textbf{G3} \\ \hline
+Requirements Associated & G3.\textbf{R1},G3.\textbf{R2},G3.\textbf{R3},G3.\textbf{R4},G3.\textbf{R5} \\ \hline
+Precondition & The Visitor reach the log in form after correctly register at the system \\ \hline
+Trigger & The Visitor has press the "Sign In!" button \\ \hline
+Successful end condition & The Visitor is now a User and can do all the operations \\ \hline
+Failed end condition & The Visitor doesn't insert the correct data or is not registered \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The Visitor insert username and password.
+\item The Visitor submits the log in form.
+\item The system verifies the data.
+\item The system shows the User page.
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions & "Registration","Modify profile", "Verify transactions", "Reserve a car", "Search power grid stations", "Search safe areas"  \\ \hline
+\end{tabular}
+\caption{Log in Use Case}
+\end{center}
+\end{table}
+\clearpage
+
+\myparagraph{Modify profile}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & User \\ \hline
+Goal & \textbf{G2} \\ \hline
+Requirements Associated & G2.\textbf{R1},G2.\textbf{R2},G2.\textbf{R3},G2.\textbf{R4} \\ \hline
+Precondition & The User must be logged in \\ \hline
+Trigger & The User has press the "Update" button \\ \hline
+Successful end condition & The User's data are correctly upadated \\ \hline
+Failed end condition & The new data are not correctly updated \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The Visitor insert old password and/or a new picture.
+\item The Visitor submits the update form.
+\item The system verifies the data.
+\item The system must save the new update in the database.
+\item The system shows a confirmation message.
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions &  \\ \hline
+\end{tabular}
+\caption{Modify profile Use Case}
+\end{center}
+\end{table}
+\clearpage
+
+\myparagraph{Verify transactions}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & User \\ \hline
+Goal & \textbf{G7} \\ \hline
+Requirements Associated & G7.\textbf{R4},G7.\textbf{R5} \\ \hline
+Precondition & The User must be logged in \\ \hline
+Trigger & The User has selected a specific transaction from a list \\ \hline
+Successful end condition & The User see all the selected transaction's details \\ \hline
+Failed end condition & The User receives an error message \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The system shows all the user's transaction.
+\item The User selects one form the list.
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions &  \\ \hline
+\end{tabular}
+\caption{Verify transaction Use Case}
+\end{center}
+\end{table}
+\clearpage
+
+\myparagraph{Search safe area}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & User \\ \hline
+Goal & \textbf{G15} \\ \hline
+Requirements Associated & G15.\textbf{R1},G15.\textbf{R2} \\ \hline
+Precondition & The User must be logged in \\ \hline
+Trigger & The User has insert a correct position. \\ \hline
+Successful end condition & The User see all the nearest safe areas \\ \hline
+Failed end condition & The User receives an error message \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The user insert a correct position or activate the GPS.
+\item The system shows on the map the safe areas.
+\item The system must have a list of all the safe areas.
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions & "Select a position" \\ \hline
+\end{tabular}
+\caption{Search safe area Use Case}
+\end{center}
+\end{table}
+\clearpage
+
+\myparagraph{Search power grid station}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & User \\ \hline
+Goal & \textbf{G16} \\ \hline
+Requirements Associated & G16.\textbf{R1},G16.\textbf{R2} \\ \hline
+Precondition & The User must be logged in \\ \hline
+Trigger & The User has insert a correct position. \\ \hline
+Successful end condition & The User see all the nearest power grid stations \\ \hline
+Failed end condition & The User receives an error message \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The user insert a correct position or activate the GPS.
+\item The system shows on the map the power grid stations.
+\item The system must have a list of all the power grid stations.
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions & "Select a position" \\ \hline
+\end{tabular}
+\caption{Search power grid station Use Case}
+\end{center}
+\end{table}
+\clearpage
+
+\myparagraph{Reserve a car}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & User \\ \hline
+Goal & \textbf{G4},\textbf{G5} \\ \hline
+Requirements Associated & G4.\textbf{R1},G4.\textbf{R2},G4.\textbf{R3},G4.\textbf{R4}, G5.\textbf{R1},G5.\textbf{R2},G5.\textbf{R3} \\ \hline
+Precondition & The User must be logged in \\ \hline
+Trigger & The User has pressed the "Reserve!" button \\ \hline
+Successful end condition & The User see all the nearest available cars \\ \hline
+Failed end condition & The User receives an error message \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The user insert a correct position or activate the GPS.
+\item The system shows on the map the available car.
+\item The User must select one of the cars.
+\item The system must shows all the selected car's detail.
+\item The User must submit the reservation form.
+\item The system saves all the reservation's details and start shows a timer. 
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions & "Select a position","Delete the reservation", "Confirm near car", "Select an available car"( that includes "See all car's details"), "See the reservation's timer" \\ \hline
+\end{tabular}
+\caption{Reserve a car Use Case}
+\end{center}
+\end{table}
+\clearpage
+
+\myparagraph{Delete a reservation}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & User \\ \hline
+Goal & \textbf{G10},\textbf{G11} \\ \hline
+Requirements Associated & G10.\textbf{R1},G10.\textbf{R2},G10.\textbf{R3},G11.\textbf{R1},G11.\textbf{R2} \\ \hline
+Precondition & The User must have made a reservation \\ \hline
+Trigger & The User has pressed the "Delete!" button \\ \hline
+Successful end condition & The User receives a confirmation message \\ \hline
+Failed end condition & The User receives an error message \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The user go to the reservation page.
+\item The reservation must not be expired.
+\item The system must set the car as available. 
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions & \\ \hline
+\end{tabular}
+\caption{Delete a reservation Use Case}
+\end{center}
+\end{table}
+\clearpage
+
+\myparagraph{Confirm to be near the reserved car}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & User \\ \hline
+Goal & \textbf{G6} \\ \hline
+Requirements Associated & G6.\textbf{R1},G6.\textbf{R2},G6.\textbf{R3} \\ \hline
+Precondition & The User must have made a reservation and must be near the car \\ \hline
+Trigger & The User has pressed the "I'm There!" button \\ \hline
+Successful end condition & The car in unlocked \\ \hline
+Failed end condition & The car remains locked \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The user go to the reservation page.
+\item The reservation must not be expired.
+\item The position of the user and the car must be the same. 
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions & \\ \hline
+\end{tabular}
+\caption{ Confirm to be near the reserved car Use Case}
+\end{center}
+\end{table}
+\clearpage
+
+\myparagraph{See the reservation timer}
+\newline
+\begin{table}[htb]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{0.6\textwidth}|}
+\hline
+Actor & User \\ \hline
+Goal & \textbf{G9} \\ \hline
+Requirements Associated & G9.\textbf{R4} \\ \hline
+Precondition & The User must have made a reservation \\ \hline
+Trigger & The User goes to the reservation page \\ \hline
+Successful end condition & The timer is showed \\ \hline
+Failed end condition & The User receives an error message \\ \hline
+Main flow & \begin{minipage}[t]{0.6\textwidth}
+\begin{enumerate}
+\addtolength{\itemindent}{0.5cm}
+\item The user go to the reservation page.
+\item The user must have made a reservation. 
+\end{enumerate}
+\end{minipage} \\ \hline
+Extensions & \\ \hline
+Inclusions & \\ \hline
+\end{tabular}
+\caption{ See the reservation timer Use Case}
+\end{center}
+\end{table}
+\clearpage
 
 
 \subsection{Performance Requirements} \label{sec:perf_requirements}
