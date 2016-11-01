@@ -320,7 +320,7 @@ Actor & Visitor \\ \hline
 Goal & \textbf{G1} \\ \hline
 Requirements Associated & G1.\textbf{R1},G1.\textbf{R2},G1.\textbf{R3},G1.\textbf{R4},G1.\textbf{R5} \\ \hline
 Precondition & The Visitor reach the registration form after access the application home page \\ \hline
-Trigger & The Visitor has press the "Register Now!" button \\ \hline
+Trigger & The Visitor has pressed the "Register Now!" button \\ \hline
 Successful end condition & The Visitor is now a new User \\ \hline
 Failed end condition & The Visitor is requested to try again because an error occurs \\ \hline
 Main flow & \begin{minipage}[t]{0.6\textwidth}
@@ -334,7 +334,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
-Inclusions & "See the registration form" \\ \hline
+Inclusions & \\ \hline
 \end{tabular}
 \caption{Registration Use Case}
 \end{center}
@@ -352,13 +352,13 @@ Actor & Visitor \\ \hline
 Goal & \textbf{G3} \\ \hline
 Requirements Associated & G3.\textbf{R1},G3.\textbf{R2},G3.\textbf{R3},G3.\textbf{R4},G3.\textbf{R5} \\ \hline
 Precondition & The Visitor reach the log in form after correctly register at the system \\ \hline
-Trigger & The Visitor has press the "Sign In!" button \\ \hline
-Successful end condition & The Visitor is now a User and can do all the operations \\ \hline
+Trigger & The Visitor has pressed the "Sign In!" button \\ \hline
+Successful end condition & The Visitor is now an User and can do all the operations \\ \hline
 Failed end condition & The Visitor doesn't insert the correct data or is not registered \\ \hline
 Main flow & \begin{minipage}[t]{0.6\textwidth}
 \begin{enumerate}
 \addtolength{\itemindent}{0.5cm}
-\item The Visitor insert username and password.
+\item The Visitor inserts username and password.
 \item The Visitor submits the log in form.
 \item The system verifies the data.
 \item The system shows the User page.
@@ -383,13 +383,13 @@ Actor & User \\ \hline
 Goal & \textbf{G2} \\ \hline
 Requirements Associated & G2.\textbf{R1},G2.\textbf{R2},G2.\textbf{R3},G2.\textbf{R4} \\ \hline
 Precondition & The User must be logged in \\ \hline
-Trigger & The User has press the "Update" button \\ \hline
+Trigger & The User has pressed the "Update" button \\ \hline
 Successful end condition & The User's data are correctly upadated \\ \hline
 Failed end condition & The new data are not correctly updated \\ \hline
 Main flow & \begin{minipage}[t]{0.6\textwidth}
 \begin{enumerate}
 \addtolength{\itemindent}{0.5cm}
-\item The Visitor insert old password and/or a new picture.
+\item The Visitor inserts old password and/or a new picture.
 \item The Visitor submits the update form.
 \item The system verifies the data.
 \item The system must save the new update in the database.
@@ -444,13 +444,13 @@ Actor & User \\ \hline
 Goal & \textbf{G15} \\ \hline
 Requirements Associated & G15.\textbf{R1},G15.\textbf{R2} \\ \hline
 Precondition & The User must be logged in \\ \hline
-Trigger & The User has insert a correct position. \\ \hline
+Trigger & The User has inserted a correct position. \\ \hline
 Successful end condition & The User see all the nearest safe areas \\ \hline
 Failed end condition & The User receives an error message \\ \hline
 Main flow & \begin{minipage}[t]{0.6\textwidth}
 \begin{enumerate}
 \addtolength{\itemindent}{0.5cm}
-\item The user insert a correct position or activate the GPS.
+\item The user inserts a correct position or activates the GPS.
 \item The system shows on the map the safe areas.
 \item The system must have a list of all the safe areas.
 \end{enumerate}
@@ -474,13 +474,13 @@ Actor & User \\ \hline
 Goal & \textbf{G16} \\ \hline
 Requirements Associated & G16.\textbf{R1},G16.\textbf{R2} \\ \hline
 Precondition & The User must be logged in \\ \hline
-Trigger & The User has insert a correct position. \\ \hline
+Trigger & The User has inserted a correct position. \\ \hline
 Successful end condition & The User see all the nearest power grid stations \\ \hline
 Failed end condition & The User receives an error message \\ \hline
 Main flow & \begin{minipage}[t]{0.6\textwidth}
 \begin{enumerate}
 \addtolength{\itemindent}{0.5cm}
-\item The user insert a correct position or activate the GPS.
+\item The user inserts a correct position or activate the GPS.
 \item The system shows on the map the power grid stations.
 \item The system must have a list of all the power grid stations.
 \end{enumerate}
@@ -510,7 +510,7 @@ Failed end condition & The User receives an error message \\ \hline
 Main flow & \begin{minipage}[t]{0.6\textwidth}
 \begin{enumerate}
 \addtolength{\itemindent}{0.5cm}
-\item The user insert a correct position or activate the GPS.
+\item The user inserts a correct position or activate the GPS.
 \item The system shows on the map the available car.
 \item The User must select one of the cars.
 \item The system must shows all the selected car's detail.
@@ -568,12 +568,12 @@ Goal & \textbf{G6} \\ \hline
 Requirements Associated & G6.\textbf{R1},G6.\textbf{R2},G6.\textbf{R3} \\ \hline
 Precondition & The User must have made a reservation and must be near the car \\ \hline
 Trigger & The User has pressed the "I'm There!" button \\ \hline
-Successful end condition & The car in unlocked \\ \hline
+Successful end condition & The car is unlocked \\ \hline
 Failed end condition & The car remains locked \\ \hline
 Main flow & \begin{minipage}[t]{0.6\textwidth}
 \begin{enumerate}
 \addtolength{\itemindent}{0.5cm}
-\item The user go to the reservation page.
+\item The user goes to the reservation page.
 \item The reservation must not be expired.
 \item The position of the user and the car must be the same. 
 \end{enumerate}
@@ -603,7 +603,7 @@ Failed end condition & The User receives an error message \\ \hline
 Main flow & \begin{minipage}[t]{0.6\textwidth}
 \begin{enumerate}
 \addtolength{\itemindent}{0.5cm}
-\item The user go to the reservation page.
+\item The user goes to the reservation page.
 \item The user must have made a reservation. 
 \end{enumerate}
 \end{minipage} \\ \hline
@@ -614,6 +614,76 @@ Inclusions & \\ \hline
 \end{center}
 \end{table}
 \clearpage
+
+\subsubsection{Class Diagram}
+In Figure \ref{fig:class} is rapresented the Class diagram that is a static diagram that describes our system structure by showing classes, attributes and their relationships. The methods will be inserted during the developing process.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Images/UML/ClassDiagram}
+\caption{Class Diagram}
+\label{fig:class}
+\end{figure}
+\clearpage
+
+\subsubsection{Sequence Diagram}
+Here we rappresent some Sequence diagrams usefull to understand the dynamic evolution of the system.
+\myparagraph{Reserve a car} 
+\vspace{10pt}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Images/UML/Reserve}
+\caption{Reserve Sequence Diagram}
+\label{fig:resseq}
+\end{figure}
+\clearpage
+
+\myparagraph{Near the reserved car} 
+\vspace{10pt}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Images/UML/Near}
+\caption{Near the car Sequence Diagram}
+\label{fig:nearseq}
+\end{figure}
+\clearpage
+
+\myparagraph{Delete a reservation} 
+\vspace{10pt}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Images/UML/Delete}
+\caption{Delete Reservation Sequence Diagram}
+\label{fig:delseq}
+\end{figure}
+\clearpage
+
+\myparagraph{See transaction details} 
+\vspace{10pt}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Images/UML/Transactions}
+\caption{Transactions Sequence Diagram}
+\label{fig:transseq}
+\end{figure}
+\clearpage
+
+\subsubsection{State Chart Diagram}
+
+\myparagraph{User state chart diagram} 
+\vspace{10pt}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Images/UML/Statechart}
+\caption{User State Chart Diagram}
+\label{fig:chart}
+\end{figure}
+\clearpage
+
+
+
+
 
 
 \subsection{Performance Requirements} \label{sec:perf_requirements}
