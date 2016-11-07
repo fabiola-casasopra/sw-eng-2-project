@@ -158,11 +158,11 @@ In this section we explain all the functional requirements necessary to reach a 
 \begin{itemize}
 \item[\textbf{G1}]: 
 \begin{itemize}
-\item[--R1--] During the registration visitors can't choose an username already in use.
-\item[--R2--] During the registration visitors can't choose an e-mail already in use.
-\item[--R3--] During the registration visitors must insert valid credit card's information.
-\item[--R4--] During the registration visitors must insert a valid driving license.
-\item[--R5--] During the registration visitors must agree with the privacy conditions to use the system.
+\item[--R1--] During the registration, visitors can't choose an username already in use.
+\item[--R2--] During the registration, visitors can't choose an e-mail already in use.
+\item[--R3--] During the registration, visitors must insert valid credit card's information.
+\item[--R4--] During the registration, visitors must insert a valid driving license.
+\item[--R5--] During the registration, visitors must agree with the privacy conditions to use the system.
 \end{itemize}
 
 \item[\textbf{G2}]:
@@ -281,18 +281,27 @@ In this section we explain all the functional requirements necessary to reach a 
 
 \subsection{Scenario Identification} \label{sec:scenarios}
 \subsubsection{Scenario 1: Registration and Log in} \label{sce1}
-Monica is a ecologist girl who everyday goes at work by train because her work place is attainable only by train or by car. One day she goes to the train station but there is a strike, she is desperate: how can she go to work? Talking with other people in the station she learns that exists a car-sharing that provides only electric cars and that she can reserve a car trough an application on her mobile phone, this application is "\textit{PowerEnJoy}". She quickly goes to the web site and download the app but to use it she must register giving some data, her driving license number and her credit card information; she insert all the correct data and as soon as she press the registration button in her mail box arrives a new e-mail with a password to access the system: she is now a new user. In the log in page she insert her username and the password recieved so she can easily enter in the system. Monica is now in her personal page where she can change the password or insert a picture to personalize her profile.
+Monica is a ecologist girl who everyday goes at work by train because her work place is attainable only by train or by car. One day she goes to the train station but there is a strike, she is desperate: how can she go to work? Talking with other people in the station she learns that exists a car-sharing that provides only electric cars and that she can reserve a car trough an application on her mobile phone, this application is "\textit{PowerEnJoy}". She quickly goes to the web site and download the app but to use it she must register giving some data, such as her driving license number and her credit card information. She inserts all the correct data and, as soon as she presses the registration button, in her mail box arrives a new e-mail with a password to access the system: she is now a new user. In the log in page she inserts her username and the password recieved so she can easily enter in the system. Monica is now in her personal page where she can change the password or insert a picture to personalize her profile.
+The first time you enter your personal page, you must change your password given you by the system with another one more secure and more easy to remember for the user.
+
 \subsubsection{Scenario 2: Reserve a car} \label{sce2}
-Mario wants to reserve an electric car to go with his girlfriend to have a pic-nic in a beautiful meadow in mountain. He quickly enters in the "\textit{PowerEnJoy}" app and goes to the reservation page that is very simple to use: he only must insert a position and the system will search for an available car nearby. In the box he can insert his specific position activating his Smartphone GPS or insert a different one: he chooses the first option. In the map on the reservation page appear immediately two cars that are available, when he select one of them he can see a curtain with the time distance between him and the car, the car's level of the battery and its status like "charging". He choose the best one and pressed the button "\textbf{\textit{Reserve!}}": immediately the reservation is confirmed and appears a timer to remind him that he has one hour to pick up the car.
+Mario wants to reserve an electric car to go with his girlfriend to have a pic-nic in a beautiful meadow in mountain. He quickly enters in the "\textit{PowerEnJoy}" app and goes to the reservation page that is very simple to use: he only must insert a position and the system will search for an available car nearby. In the box, he can insert his actual position activating his Smartphone GPS or insert a different one: he chooses the first option. In the map on the reservation page, it appears immediately that two cars are available. When he select one of them, he can see a curtain with the time distance between him and the car, the car's level of the battery and its status like "charging". He chooses the best one and pressed the button "\textbf{\textit{Reserve!}}": immediately the reservation is confirmed and it appears a timer to remind him that he has one hour to go and pick up the car.
 \subsubsection{Scenario 3: Pick up a car} \label{sce3}
-Luca has reserved a car and now, thanks to the map in the reservation page, he walked towards the car. As soon as he is nearby the car he pressed the button "\textbf{\textit{I'm there!}}", the system compares his position and the car's position: they are the same so the car is unlocked and Luca can enter in it. In the car there is a screen where he can see his username, the car's number, the battery level so he can know when he must charge the car and, very important, the time passed from the moment he has picked up the car with the corresponding amount to pay.
+Luca has reserved a car and now, thanks to the map in the reservation page, he has walked towards the car. As soon as he is nearby the car, he presses the button "\textbf{\textit{I'm there!}}". The system compares his position and the car's position: they are the same, so the car is unlocked and Luca can get into the car. There is a screen where he can see usefol information: his username, the car's number, the battery level (so that he can know when he must charge it the car) and, last but not least, the time passed from the moment he has picked up the car, with the corresponding amount to pay.
 \subsubsection{Scenario 4: Charge, park and lock a car} \label{sce4}
-Maria is, from a long time, using a car picked up through the "\textit{PowerEnJoy}" app, she goes everywhere to do shopping so she consume a lot of battery. She see that the battery level is low and she must charge it; she know that in the app there is a page to consult the list of power grid station near a specific position so no one will remain "on foot". She access the app using her Smartphone and goes to the needed page, she activates her GPS so in the map appears a station that she can reach quickly; when she arrives she links the car to charge it. After that she continues her shopping; when she has finished all the commissions she wants to park the car in a safe area so, just as she has done before, she goes to the safe area's page, insert her position and a list of areas will appears on the map. She chooses for the best one and goes there, as soon as she park the car and exit from it the system automatically lock it.  
+Since a long time, Maria has been using a car picked up through the "\textit{PowerEnJoy}" app: she goes around the city for shopping, so she consume a lot of battery. She notices that the battery level is low and she must charge it. She knows that in the app there is a page where to consult the list of power grid station near a specific position: no one will remain with his car completly out of power. She accesses the app using her Smartphone and goes to the needed page. Then, she activates her GPS and in the map a power grid station appears: she can reach it quickly. When she arrives, she plug the car to re-charge it. After that, she continues her shopping. When she has finished all the commissions, she wants to park the car in a safe area so, just as she did before, she goes to the safe area's page, she chooses to use her position and a list of areas will appear on the map. She chooses for the best one and she goes there. As soon as she parks the car and exits from it, the system automatically locks the car.  
 \subsubsection{Scenario 5: Transaction} \label{sce5}
-Fabio is in a shop and, at the moment to pay, the shop assistant tell to him that he has reached the daily credit card's limit. He is furious and can not understand how it is possible, suddenly he reminds that in the morning he has picked up a car from "\textit{PowerEnJoy}" and he thinks that the system has charged him more than necessary. Fortunately in the app there is a page with the details of all the transaction; he access in his personal page and goes to the transaction's page: here there is a list and, when one of the list entry is selected, all its details appear. He selected that corresponding to the morning reservation: the charge is correct because is specified the time of car using and the amount calculates from a specified cost per minute. He has spent his money in an another way.
+Fabio is in a shop and, at the moment to pay, the shop assistant tell to him that he has reached the daily credit card's limit. He is furious and he cannot understand how it is possible. However, he suddenly reminds that in the morning he has picked up a car from "\textit{PowerEnJoy}" and he thinks that the system has charged him more than necessary. Fortunately, in the app there is a page with the details of all the transaction. He logs in and goes to the transaction's page: there is the transactions list and, when one of the entry is selected, all its details appear. He selected the transaction corresponding to the morning reservation: the charge is correct because is specified the time of car using and the amount calculates from a specified cost per minute. 
+However, he parked the car with only the 16 per cent battery remaing, so the sistem charged him with an additional 30 per cent of the cost of the last ride.
+%He has spent his money in an another way.
 \subsubsection{Scenario 6: Reservation expired} \label{sce6}
-Giusy telephone starts ringing: is her best friend who tells that she not need to share a car because someone will go to get her. Giusy has already make a car reservation but she knows that she can delete it without problems because in the app reservation page there is a button specific to do this action. "There is no hurry" thinks Giusy so she continues to do her work: she has forget that the reservation will last only one hour. After a lot of time she remember that has not delete the car reservation yet so she takes her computer and goes to the site but when she arrives at the reservation's page there is a surprise: the timer strikes 00:00 and there is a red written " The reservation time is expired. You will be charged 1 euro fee.". Next time she will pay more attention. 
+Giusy mobile phone starts ringing: it's her best friend who tells that she does not need 
+%to share a car because someone will go to get her. 
+anymore that Giusy go and pick her up to go to the party since she has already found an alternative solution.
+Giusy has already made a car reservation but she knows that she can delete it without problems because in the app reservation pageshe has the possibility to do this action. "There is no hurry" Giusy thinks, so she continues to works. She forgot that the reservation will last only one hour. The day after, she reminds she has not deleted the car reservation yet, so she takes her computer and goes to the site. But, when she arrives at the reservation's page, there is a surprise: the timer strikes 00:00 and there is a red written saying "\textit{The reservation time is expired. You will be charged 1 euro fee.}". Next time she will pay more attention. 
 \clearpage  
+
+%NOTA: credo che solo chi prenota la macchina può usarla...
 
 \subsection{UML Models}
 \subsubsection{Use Case Diagram}
@@ -331,6 +340,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \item The system verifies that nickname and e-mail are not in used.
 \item The system saves all the visitor's data in the database.
 \item The system shows a confirmation message.
+\vspace{1,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -362,6 +372,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \item The Visitor submits the log in form.
 \item The system verifies the data.
 \item The system shows the User page.
+\vspace{1,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -394,6 +405,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \item The system verifies the data.
 \item The system must save the new update in the database.
 \item The system shows a confirmation message.
+\vspace{1,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -421,8 +433,9 @@ Failed end condition & The User receives an error message \\ \hline
 Main flow & \begin{minipage}[t]{0.6\textwidth}
 \begin{enumerate}
 \addtolength{\itemindent}{0.5cm}
-\item The system shows all the user's transaction.
-\item The User selects one form the list.
+\item The system shows all the user's transactions.
+\item The User selects one form the list to see details.
+\vspace{2,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -453,6 +466,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \item The user inserts a correct position or activates the GPS.
 \item The system shows on the map the safe areas.
 \item The system must have a list of all the safe areas.
+\vspace{2,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -483,6 +497,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \item The user inserts a correct position or activate the GPS.
 \item The system shows on the map the power grid stations.
 \item The system must have a list of all the power grid stations.
+\vspace{1,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -516,6 +531,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \item The system must shows all the selected car's detail.
 \item The User must submit the reservation form.
 \item The system saves all the reservation's details and start shows a timer. 
+\vspace{2,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -546,6 +562,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \item The user go to the reservation page.
 \item The reservation must not be expired.
 \item The system must set the car as available. 
+\vspace{1,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -576,6 +593,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \item The user goes to the reservation page.
 \item The reservation must not be expired.
 \item The position of the user and the car must be the same. 
+\vspace{2,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -605,6 +623,7 @@ Main flow & \begin{minipage}[t]{0.6\textwidth}
 \addtolength{\itemindent}{0.5cm}
 \item The user goes to the reservation page.
 \item The user must have made a reservation. 
+\vspace{2,5mm}
 \end{enumerate}
 \end{minipage} \\ \hline
 Extensions & \\ \hline
@@ -616,7 +635,7 @@ Inclusions & \\ \hline
 \clearpage
 
 \subsubsection{Class Diagram}
-In Figure \ref{fig:class} is rapresented the Class diagram that is a static diagram that describes our system structure by showing classes, attributes and their relationships. The methods will be inserted during the developing process.
+In Figure \ref{fig:class} is shown the Class diagram, a static diagram that describes our system structure by showing classes, attributes and their relationships. The methods will be inserted during the developing process.
 
 
 \begin{figure}[htbp]
@@ -626,6 +645,7 @@ In Figure \ref{fig:class} is rapresented the Class diagram that is a static diag
 \label{fig:class}
 \end{figure}
 \clearpage
+%valid and invalid position
 
 \subsubsection{Sequence Diagram}
 Here we rappresent some Sequence diagrams usefull to understand the dynamic evolution of the system.
@@ -705,4 +725,4 @@ The system maintainability depends on the API's develop but thanks to all the do
 \subsubsection{Portability} \label{portability}
 The application can be used to any \acs{os} so it has a very good portability.
 
-\subsection{Other Requirements} \label{other}
+%\subsection{Other Requirements} \label{other}
