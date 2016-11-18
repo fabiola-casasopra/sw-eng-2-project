@@ -1,14 +1,68 @@
 \section{Introduction} \label{sec:intro}
 
+The main purpose of this document and the project's scope are described in this section. Moreover, we are going to give some definitions which will help the reader to better understand the content of this document and we are going to show the reference documents that have been used to redact this one. At the end, it will be explained the structure of this document.
+
 \subsection{Purpose} \label{subsec:purpose}
 
-\subsection{Scope} \label{subsec:scope}
+This document is called \emph{\acl{dd}} and, from now on, we will refer to it using the acronym \acs{dd}. Its purpose is to provide a complete description of the system specified in the \acs{rasd}, giving enough technical details to allow the proceeding of the software development. So, we must have a good understanding of which are the components of the system, how they interact, which is their high level architecture and how they will be deployed, highlighting the design patterns we decided to use.
+In addition, the \acs{rasd} is useful for the developers in order to figure out how to implement the entire system, thanks to the general description of the architecture and the design of the system to be built. For this reason, it must be complete and correct as much as possible.
+The \acs{dd} contains both narrative and graphical documentation of the software design, including, for example, user experience diagrams, entity-relation diagrams, component diagrams, and other supporting requirement information.
 
-\subsection{Definitions, acronyms, abbreviations} \label{subsec:def-ac-ab}
+\subsection{Scope} \label{subsec:scope}
+The aim of the project PowerEnJoy is to provide a car-sharing service that involves \textit{only} electric cars. In this document, we will give more information about the design choices for the development of this application.
+In order to have more details about the scope of our project, you may refer to the \textit{Section 1} of the \acl{rasd}.
+
+\subsection{Definitions, acronyms, abbreviations} 
+\label{subsec:def-ac}
 \subsubsection{Definitions} \label{def}
-\subsubsection{Acronyms} \label{acr}
-\subsubsection{Abbreviations} \label{abbre}
+\subsubsection{Acronyms and abbreviations } \label{acr}
+Here there is the acronims and abbreviations list:
+
+%------------Acronyms----------
+\begin{acronym}[DD] %put here the first acronym
+
+\acro{dd}[DD]{Design Document}
+\acro{rasd}[RASD]{Requirements Analysis and Specifications Document}
+\acro{gui}[GUI]{Graphical User Interface}
+\acro{jee}[JEE]{Java Platform, Enterprise Edition}
+\acro{rest}[REST]{Representational State Transfer }
+\acro{eis}[EIS]{Enterprise Information System}
+\acro{jsf}[JSF]{JavaServer Faces}
+\acro{uml}[UML]{Unified Modeling Language}
+\acro{api}[API]{Application Programming Interface}
+\acro{db}[DB]{DataBase}
+\acro{os}[OS]{Operating System}
+
+\end{acronym}
 
 \subsection{Reference Documents} \label{ref-doc}
 
+\begin{itemize}
+\item[\textbf{--}] Specification document: Assignments AA 2016-2017.pdf
+\item[\textbf{--}] IEEE Std 1016tm-2009 Standard for Information Technology - System Design - Software Design Descriptions.
+\item[\textbf{--}] \acl{rasd}: RASD.pdf 
+\newline
+(\url{https://github.com/fabiola-casasopra/sw-eng-2-project/tree/master/RASD/RASD.pdf})
+\end{itemize}
+
 \subsection{Document Structure} \label{doc-struct}
+
+Here is presented the stucture of the documtent,  with a brief overview of each section.
+While the \acs{rasd} is written for a more general audience, this document is intended for only people directly involved in the development of our application, as the software developers, the project consultants and the team managers. 
+So, each person, depending on its role, can go directly and read to the section he finds more relevant. 
+
+\begin{itemize}
+
+\item[\textbf{Section \ref{sec:intro}}]There is an introduction with this document's purpose and other general information about it.
+
+\item[\textbf{Section \ref{sec:arch-design}}]There is an overall view of our system, describing all the components from different points of view and  highlighting their interaction. Moreover, there is an explanation about the selected architectural system and design pattern.
+
+\item[\textbf{Section \ref{sec:algo}}]Here there are presented the algorithm we think are more relevant for the development of the application. They are mainly described using a pseudocode implementation.
+
+\item[\textbf{Section \ref{sec:user-interface}}]There is a description of all the details about the structure of the \acl{gui}. This section is useful for the reder  to get an idea on how the final application will look like.
+
+\item[\textbf{Section \ref{sec:req-trac}}]There is an explaination of how the requirements defined in the \acs{rasd} map into the design elements that have defined in this document.
+
+\item[\textbf{Section \ref{sec:appendix}}]Here there are given additional information that may be useful to the reader, such as the tools used and the time spent to redact this document.
+\end{itemize}
+
