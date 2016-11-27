@@ -15,6 +15,26 @@ In order to have more details about the scope of our project, you may refer to t
 \subsection{Definitions, acronyms, abbreviations} 
 \label{subsec:def-ac}
 \subsubsection{Definitions} \label{def}
+Here we present some fundamental defitinition:
+\begin{itemize}
+\item[\textbf{--}] A \textsf{Session Bean} encapsulates business logic that can be invoked programmatically by a client over local, remote, or web service client views. To access an application deployed on the server, the client invokes the session bean's methods. The session bean performs work for its client, shielding it from complexity by executing business tasks inside the server. Moreover, a session bean is not persistent. 
+
+\item[\textbf{--}] A \textsf{Stateful Session Bean} is a session bean in which the instance variables (that is the state of the object) represent the state of a unique client/bean session.
+A session bean is not shared: it can have only one client per time. When the client terminates, its session bean appears to terminate and is no longer associated with it.
+The state is retained only for the duration of the client/bean session. If the client removes the bean, the session ends and the state disappears. This transient nature of the state is not a problem, however, because when the conversation between the client and the bean ends, there is no need to retain the state.
+
+\item[\textbf{--}] A \textsf{Stateless Session Bean} does not maintain a conversational state with the client. When a client invokes the methods of a stateless bean, the bean's instance variables may contain a state specific to that client but only for the duration of the invocation. When the method is finished, the client-specific state should not be retained. 
+Because they can support multiple clients, stateless session beans can offer better scalability for applications that require large numbers of clients.
+
+\item[\textbf{--}] A \textsf{Singleton Session Bean} is instantiated once per application and exists for the lifecycle of the application. Singleton session beans are designed for circumstances in which a single enterprise bean instance is shared across and concurrently accessed by clients.
+
+\item[\textbf{--}] \textsf{\acl{jsf}} technology is a server-side component framework for building Java technology–based web applications.
+\acs{jsf} technology provides a well-defined programming model and various tag libraries. The tag libraries contain tag handlers that implement the component tags. These features significantly ease the burden of building and maintaining web applications with server-side \acs{ui}s.
+
+\end{itemize}
+
+These definitions are taken from "\textit{Java Platform, Enterprise Edition The Java EE Tutorial, Release 7}", released by Oracle.
+
 \subsubsection{Acronyms and abbreviations } \label{acr}
 Here there is the acronims and abbreviations list:
 
@@ -22,16 +42,22 @@ Here there is the acronims and abbreviations list:
 \begin{acronym}[DD] %put here the first acronym
 
 \acro{dd}[DD]{Design Document}
-\acro{rasd}[RASD]{Requirements Analysis and Specifications Document}
 \acro{gui}[GUI]{Graphical User Interface}
-\acro{jee}[JEE]{Java Platform, Enterprise Edition}
-\acro{rest}[REST]{Representational State Transfer }
 \acro{eis}[EIS]{Enterprise Information System}
+\acro{ejb}[EJB]{Enterprise JavaBean}
+\acro{er}[ER]{entity-relationship}
+\acro{gps}[GPS]{Global Positioning System}
+\acro{jdbc}[JDBC]{Java DataBase Connectivity}
+\acro{jee}[JEE]{Java Platform, Enterprise Edition}
 \acro{jsf}[JSF]{JavaServer Faces}
+\acro{mvc}[MVC]{Model-View-Controller}
+\acro{rasd}[RASD]{Requirements Analysis and Specifications Document}
+\acro{rest}[REST]{Representational State Transfer}
+\acro{ui}[UI]{user interface}
 \acro{uml}[UML]{Unified Modeling Language}
-\acro{api}[API]{Application Programming Interface}
-\acro{db}[DB]{DataBase}
-\acro{os}[OS]{Operating System}
+%\acro{api}[API]{Application Programming Interface}
+%\acro{db}[DB]{DataBase}
+%\acro{os}[OS]{Operating System}
 
 \end{acronym}
 
