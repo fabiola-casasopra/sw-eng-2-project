@@ -1,1 +1,141 @@
 \section{Algorithm Design} \label{sec:algo}
+
+In the following section, we are going to show the reader some algorithms thet we think they will be useful for the implementation of PowerEnjoy.
+In this document, only a first overview on the step of each algorithm will be presented, without further detailing the implementation aspects. Moreover, we are aware that optimization of the algorithm we are going to present are possible.
+However, we will discuss about this aspects in the next steps of the development of our system.
+
+\subsection{Look for near Safe Areas} \label{subsec:near-safe-area}
+
+In this subsection, we present an algorithm that describes how the system manages the research of safe areas near a certain position given by the user. 
+We make the hypothesis that the safe areas are saved in a linked list.
+We check each element: if it is near the position of the user, we add it to the near-safe-area list and we keep searching, otherwise we go on without doing anything.
+We also suppose to have a function \texttt{near(P)} that returns \texttt{true} if the position of a safe area is near the one given by the user, \texttt{false} otherwise.
+
+\vspace{32pt}
+\begin{algorithm}[h!tb]
+\caption{\textsc{Look for near Safe Areas}}
+\label{alg:near-safe-area}
+\begin{algorithmic}[1]
+\begin{spacing}{1,2}
+\State P: \textit{position given by the user}
+\State L: \textit{linked list in which the safe areas are saved}
+\Function{\textsc{Look for near Safe Areas}}{P, L}
+\State $NearL \leftarrow $ \textit{linked list in which the near safe areas are saved}
+\For{$i = 0 \to L.size()$}
+	\If{$L.get(i).near(P)$}
+		\State $NearL.add(L.get(i))$
+	\EndIf
+\EndFor
+\State\Return $NearL$
+\EndFunction
+\end{spacing}
+\end{algorithmic}
+\end{algorithm}
+
+\clearpage
+
+\subsection{Look for near Power Grid Stations} \label{subsec:near-stations}
+
+In this subsection, we present an algorithm that describes how the system manages the research of power grid stations near a certain position given by the user. 
+We make the hypothesis that the power grid stations are saved in a linked list.
+We check each element: if it is near the position of the user, we add it to the near-power-grid-stations list and we keep searching, otherwise we go on without doing anything.
+We also suppose to have a function \texttt{near(P)} that returns \texttt{true} if the position of a power grid stations is near the one given by the user, \texttt{false} otherwise.
+
+\vspace{80pt}
+\begin{algorithm}[h!tb]
+\caption{\textsc{Look for near Power Grid Stations}}
+\label{alg:near-stations}
+\begin{algorithmic}[1]
+\begin{spacing}{1,2}
+\State P: \textit{position given by the user }
+\State S: \textit{linked list in which the power grid stations are saved}
+\Function{\textsc{Look for near Power Grid Stations}}{P, S}
+\State $NearS \leftarrow $ \textit{linked list in which the near power grid stations are saved}
+\For{$i = 0 \to S.size()$}
+	\If{$S.get(i).near(P)$}
+		\State $NearS.add(S.get(i))$
+	\EndIf
+\EndFor
+\State\Return $NearS$
+\EndFunction
+\end{spacing}
+\end{algorithmic}
+\end{algorithm}
+
+\clearpage
+
+\subsection{Look for near Car} \label{subsec:near-car}
+
+In this subsection, we present an algorithm that describes how the system manages the research of reservable car near a certain position given by the user. 
+We first search the safe areas near the given position: for each safe area, if there are one or more reservable car, we add them to the near-car-list. Otherwise, if there are no PowerEnjoy cars or they havel been already reserved, we go on to the next near safe area.
+
+\vspace{80pt}
+\begin{algorithm}[h!tb]
+\caption{\textsc{Look for near Car}}
+\label{alg:near-car}
+\begin{algorithmic}[1]
+\begin{spacing}{1,2}
+\State P: \textit{position given by the user }
+\State L: \textit{linked list in which the safe areas are saved}
+\Function{\textsc{Look for near Car}}{P, L}
+\State $NearC \leftarrow $ \textit{linked list in which the near safe areas are saved}
+\For{$i = 0 \to L.size()$}
+	\If{$L.get(i).near(P)$}
+		\State $NearA \leftarrow L.get(i)$
+		\For{$j=0 \to NearA.ParkedCar.size()$}
+			\If{$NearA.ParkedCar.get(j).isReserved()=False$}
+				\State $NearC.add(NearA.ParkedCar.get(j))$
+			\EndIf
+		\EndFor
+	\EndIf
+\EndFor
+\State\Return $NearC$
+\EndFunction
+\end{spacing}
+\end{algorithmic}
+\end{algorithm}
+
+\clearpage
+
+\subsection{Discounts and Penalties Managment} \label{subsec:discount}
+In this subsection, we present an algorithm that describes how the system manages the discounts and the penalties that may be applied to a reservation fee. 
+This function takes as input the reservation we want to be analyzed. 
+\begin{enumerate}
+\item[\textbf{--}]If the system have detected at least two passengers onto the car, there is a discount of $10\%$.
+\item[\textbf{--}]If the related car is left with at least $50\%$ of the battery charge, there is a discount of $20\%$.
+\item[\textbf{--}]If the related car is plugged into a power grid, there is a discount of $30\%$.
+\item[\textbf{--}]If the related car is left at more than $3$ Km from the nearest power grid station, there is a penalties of $30\%$.
+\item[\textbf{--}]If the related car is left with more than $80\%$ of the battery empty, there is a penalties of $30\%$.
+\end{enumerate}
+We suppose that the discount and penalties can be combined, following the order presented above.
+Moreover, we make the hypothesis to have the function \texttt{isFar()}, that returns \texttt{true} if the distance between the car and the nearest power station is more than $3$ Km, \texttt{false} otherwise.
+\newline
+
+\begin{algorithm}[h!tb]
+\caption{\textsc{Discounts and Penalties Managment}}
+\label{alg:managment}
+\begin{algorithmic}[1]
+\begin{spacing}{1,2}
+\State R: \textit{we need to compute the final fee of reservation R}
+\Procedure{\textsc{Discounts and Penalties Managment}}{R}
+\If{$R.passengers>2$}
+	\State{$R.fee \leftarrow R.fee-0.1R.fee$}
+\EndIf
+\If{$R.reservedCar.battery>50$}
+	\State{$R.fee \leftarrow R.fee-0.2R.fee$}
+\EndIf
+\If{$R.reservedCar.isPlugged()$}
+	\State{$R.fee \leftarrow R.fee-0.3R.fee$}
+\EndIf
+\If{$R.reservedCar.isFar()$}
+	\State{$R.fee \leftarrow R.fee+0.3R.fee$}
+\EndIf
+\If{$R.reservedCar.battery<0.2$}
+	\State{$R.fee \leftarrow R.fee+0.3R.fee$}
+\EndIf
+\EndProcedure
+\end{spacing}
+\end{algorithmic}
+\end{algorithm}
+
+\clearpage
