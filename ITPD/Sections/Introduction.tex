@@ -1,9 +1,71 @@
 \section{Introduction} \label{sec:intro}
 
+The \acl{itpd} aims at describing the planning in order to accomplish the integration test for our application PowerEnJoy. 
+This document is useful for the development team, which is responsible for the creation of the integration test scripts in accordance to what is described in the next sections. Moreover, a developer will be chosen and he will be responsible for execution of the test scripts and certifying that the integration testing is complete. Furthermore, integration testing includes interactions between all layers of an application, including interfaces to other applications, as a complete end-to-end test of the functionality. 
+
 \subsection{Revision History}
-%Record all revisions to the document
+\texttt{Version 1.0}, on 15 January 2017.
+
 \subsection{Purpose and Scope}
+The aim of the project PowerEnJoy is to provide a car-sharing service that involves \textit{only} electric cars. In this documents, what to test, in which sequence, which tools are needed for testing and which stubs, drivers or oracles need to be developed is explained. If you wish to have more details about the scope of our project, you may refer to the \textit{Section 1} of the \acl{rasd}.
 
 \subsection{List of Definitions and Abbreviations}
+Here there is the acronims and abbreviations list:
+
+%------------Acronyms----------
+\begin{acronym}[DD] %put here the first acronym
+
+\acro{dd}[DD]{Design Document}
+%\acro{gui}[GUI]{Graphical User Interface}
+%\acro{eis}[EIS]{Enterprise Information System}
+%\acro{ejb}[EJB]{Enterprise JavaBean}
+%\acro{er}[ER]{Entity-Relationship}
+%\acro{gps}[GPS]{Global Positioning System}
+\acro{itpd}[ITPD]{Integration Test Plan Document}
+\acro{it}[IT]{Integration Test}
+%\acro{jdbc}[JDBC]{Java DataBase Connectivity}
+%\acro{jee}[JEE]{Java Platform, Enterprise Edition}
+%\acro{jsf}[JSF]{JavaServer Faces}
+%\acro{mvc}[MVC]{Model-View-Controller}
+\acro{rasd}[RASD]{Requirements Analysis and Specifications Document}
+%\acro{rest}[REST]{Representational State Transfer}
+\acro{tp}[TP]{Test Procedure}
+%\acro{ui}[UI]{User Interface}
+%\acro{uml}[UML]{Unified Modeling Language}
+%\acro{api}[API]{Application Programming Interface}
+%\acro{db}[DB]{DataBase}
+%\acro{os}[OS]{Operating System}
+
+\end{acronym}
 
 \subsection{List of Reference Documents}
+
+\begin{itemize}
+\item[\textbf{--}] Specification document: Assignments AA 2016-2017.pdf
+\item[\textbf{--}] IEEE Std 1016tm-2009 Standard for Information Technology - System Design - Software Design Descriptions.
+\item[\textbf{--}] \acl{rasd}: RASD.pdf 
+\newline
+(\url{https://github.com/fabiola-casasopra/sw-eng-2-project/tree/master/RASD/RASD.pdf})
+\item[\textbf{--}] \acl{dd}: DD.pdf 
+\newline
+(\url{https://github.com/fabiola-casasopra/sw-eng-2-project/blob/master/DD/DD.pdf})
+\end{itemize}
+
+\subsection{Document overview}
+
+Here we show the stucture of the document, with a brief overview of each section.
+
+\begin{itemize}
+
+\item[\textbf{Section \ref{sec:intro}}]There is an introduction with this document's purpose and other general information about it.
+
+\item[\textbf{Section \ref{sec:intstra}}]There is the definition of all the items to be tested and the explanation of the integration testing approach.
+
+\item[\textbf{Section \ref{sec:istd}}]Here, for each step of the integration process above, there is a description of the type of tests that will be used to verify that the elements integrated in this step perform as expected. Moreover, ther is a general description of the expected results of the test set.  
+
+\item[\textbf{Section \ref{sec:tter}}]Here, we are going to identify all tools and test equipment needed to accomplish the integration and there will be an explanation on why and how we are going to use the speific tool. 
+
+\item[\textbf{Section \ref{sec:pstdr}}]Here, we are going to identify any program stubs or special test data required for each integration step, referring to the testing strategy and test design described in the previous section.
+
+\item[\textbf{Section \ref{sec:app}}]Here there are given additional information that may be useful to the reader, such as the tools used and the time spent to redact this document.
+\end{itemize}
