@@ -1,2 +1,661 @@
 \section{Individual Steps and Test Description} \label{sec:istd}
-%For each step of the integration process above, describe the type of tests that will be used to verify that the elements integrated in this step perform as expected. Describe in general the expected results of the test set. You may refer to Chapter 3 and Chapter 4 of the test plan example[1] as an example of what we expect. (NOTE: This is not a detailed description of test protocols. Think of this as the test design phase. Specific protocols will be written to fulfill the goals of the tests in this section.)
+\subsection{Test Case Specifications}
+\vspace{10pt}
+\subsubsection{Integration Test Case IT1} \label{sssec:IT1}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT1T1\\
+\hline
+\textbf{Test Item} & Visitor Managed Beans $\rightarrow$ Visitor Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Visitor Managed Beans input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Visitor Manager \\
+\hline
+\textbf{Environmental Needs} & Client driver\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT1T1}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\subsubsection{Integration Test Case IT2} \label{sssec:IT2}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT2T1\\
+\hline
+\textbf{Test Item} & User Managed Beans $\rightarrow$ User Manager\\
+\hline
+\textbf{Input Specifications} & Create typical User Managed Beans input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the User Manager \\
+\hline
+\textbf{Environmental Needs} & Client driver\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT2T1}
+\end{center}
+\end{table}
+\clearpage
+
+\subsubsection{Integration Test Case IT3} \label{sssec:IT3}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT3T1\\
+\hline
+\textbf{Test Item} & User Manager $\rightarrow$ Car Manager\\
+\hline
+\textbf{Input Specifications} & Create typical User Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Car Manager \\
+\hline
+\textbf{Environmental Needs} & IT2 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT3T1}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\subsubsection{Integration Test Case IT4} \label{sssec:IT4}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT4T1\\
+\hline
+\textbf{Test Item} & User Manager $\rightarrow$ Reservation Manager\\
+\hline
+\textbf{Input Specifications} & Create typical User Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Reservation Manager \\
+\hline
+\textbf{Environmental Needs} & IT2 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT4T1}
+\end{center}
+\end{table}
+\clearpage
+
+\subsubsection{Integration Test Case IT5} \label{sssec:IT5}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT5T1\\
+\hline
+\textbf{Test Item} & User Manager $\rightarrow$ Transaction Manager\\
+\hline
+\textbf{Input Specifications} & Create typical User Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Transaction Manager \\
+\hline
+\textbf{Environmental Needs} & IT2 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT5T1}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\subsubsection{Integration Test Case IT6} \label{sssec:IT6}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT6T1\\
+\hline
+\textbf{Test Item} & Car Manager $\rightarrow$ Reservation Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Car Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Reservation Manager \\
+\hline
+\textbf{Environmental Needs} & IT3, IT2 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT6T1}
+\end{center}
+\end{table}
+\clearpage
+
+\subsubsection{Integration Test Case IT7} \label{sssec:IT7}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT7T1\\
+\hline
+\textbf{Test Item} & Reservation Manager $\rightarrow$ Transaction Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Reservation Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Transaction Manager \\
+\hline
+\textbf{Environmental Needs} & IT6, IT4, IT3, IT2 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT7T1}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\subsubsection{Integration Test Case IT8} \label{sssec:IT8}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT8T1\\
+\hline
+\textbf{Test Item} & User Manager $\rightarrow$ Java Persistence\\
+\hline
+\textbf{Input Specifications} & Create typical User Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Persistence Module \\
+\hline
+\textbf{Environmental Needs} & IT2 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT8T1}
+\end{center}
+\end{table}
+\clearpage
+
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT8T2\\
+\hline
+\textbf{Test Item} & Visitor Manager $\rightarrow$ Java Persistence\\
+\hline
+\textbf{Input Specifications} & Create typical Visitor Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Persistence Module \\
+\hline
+\textbf{Environmental Needs} & IT1 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT8T2}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT8T3\\
+\hline
+\textbf{Test Item} & Car Manager $\rightarrow$ Java Persistence\\
+\hline
+\textbf{Input Specifications} & Create typical Car Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Persistence Module \\
+\hline
+\textbf{Environmental Needs} & IT3, IT2 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT8T3}
+\end{center}
+\end{table}
+\clearpage
+
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT8T4\\
+\hline
+\textbf{Test Item} & Reservation Manager $\rightarrow$ Java Persistence\\
+\hline
+\textbf{Input Specifications} & Create typical Reservation Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Persistence Module \\
+\hline
+\textbf{Environmental Needs} & IT6, IT3, IT2 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT8T4}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT8T5\\
+\hline
+\textbf{Test Item} & Transaction Manager $\rightarrow$ Java Persistence\\
+\hline
+\textbf{Input Specifications} & Create typical Transaction Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Persistence Module \\
+\hline
+\textbf{Environmental Needs} & IT7, IT6, IT4, IT3, IT2 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT8T5}
+\end{center}
+\end{table}
+\clearpage
+
+\subsubsection{Integration Test Case IT9} \label{sssec:IT9}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT9T1\\
+\hline
+\textbf{Test Item} & Java Persistence $\rightarrow$ User Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Java Persistence input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the User Manager \\
+\hline
+\textbf{Environmental Needs} & Database Driver\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT9T1}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT9T2\\
+\hline
+\textbf{Test Item} & Java Persistence $\rightarrow$ Visitor Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Java Persistence input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Visitor Manager \\
+\hline
+\textbf{Environmental Needs} & Database Driver\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT9T2}
+\end{center}
+\end{table}
+\clearpage
+
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT9T3\\
+\hline
+\textbf{Test Item} & Java Persistence $\rightarrow$ Car Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Java Persistence input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Car Manager \\
+\hline
+\textbf{Environmental Needs} & Database Driver\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT9T3}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT9T4\\
+\hline
+\textbf{Test Item} & Java Persistence $\rightarrow$ Reservation Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Java Persistence input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Reservation Manager \\
+\hline
+\textbf{Environmental Needs} & Database Driver\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT9T4}
+\end{center}
+\end{table}
+\clearpage
+
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT9T5\\
+\hline
+\textbf{Test Item} & Java Persistence $\rightarrow$ Transaction Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Java Persistence input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Transaction Manager \\
+\hline
+\textbf{Environmental Needs} & Database Driver\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT9T5}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\subsubsection{Integration Test Case IT10} \label{sssec:IT10}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT10T1\\
+\hline
+\textbf{Test Item} & Transaction Manager $\rightarrow$ Reservation Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Transaction Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Reservation Manager \\
+\hline
+\textbf{Environmental Needs} & IT9 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT10T1}
+\end{center}
+\end{table}
+\clearpage
+
+\subsubsection{Integration Test Case IT11} \label{sssec:IT11}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT11T1\\
+\hline
+\textbf{Test Item} & Reservation Manager $\rightarrow$ Car Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Reservation Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Car Manager \\
+\hline
+\textbf{Environmental Needs} & IT9, IT10 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT11T1}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\subsubsection{Integration Test Case IT12} \label{sssec:IT12}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT12T1\\
+\hline
+\textbf{Test Item} & Transaction Manager $\rightarrow$ User Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Transaction Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the User Manager \\
+\hline
+\textbf{Environmental Needs} & IT9 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT12T1}
+\end{center}
+\end{table}
+\clearpage
+
+\subsubsection{Integration Test Case IT13} \label{sssec:IT13}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT13T1\\
+\hline
+\textbf{Test Item} & Reservation Manager $\rightarrow$ User Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Reservation Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the User Manager \\
+\hline
+\textbf{Environmental Needs} & IT10, IT9 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT13T1}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\subsubsection{Integration Test Case IT14} \label{sssec:IT14}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT14T1\\
+\hline
+\textbf{Test Item} & Car Manager $\rightarrow$ User Manager\\
+\hline
+\textbf{Input Specifications} & Create typical Car Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the User Manager \\
+\hline
+\textbf{Environmental Needs} & IT9, IT10, IT11 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT14T1}
+\end{center}
+\end{table}
+\clearpage
+
+\subsubsection{Integration Test Case IT15} \label{sssec:IT15}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT15T1\\
+\hline
+\textbf{Test Item} & User Manager $\rightarrow$ User Managed Beans\\
+\hline
+\textbf{Input Specifications} & Create typical User Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the User Managed Beans \\
+\hline
+\textbf{Environmental Needs} & IT9, IT12, IT13, IT14 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT15T1}
+\end{center}
+\end{table}
+
+\vspace{10pt}
+\subsubsection{Integration Test Case IT16} \label{sssec:IT16}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Case Identifier} & IT16T1\\
+\hline
+\textbf{Test Item} & Visitor Manager $\rightarrow$ Visitor Managed Beans\\
+\hline
+\textbf{Input Specifications} & Create typical Visitor Manager input \\
+\hline
+\textbf{Output Specifications} & Check if the correct methods are called in the Visitor Managed Beans \\
+\hline
+\textbf{Environmental Needs} & IT9 succeded\\
+\hline
+\end{tabular}
+\caption{Integration Test Case IT16T1}
+\end{center}
+\end{table}
+\clearpage
+
+\subsection{Test Procedures}
+\subsubsection{Test Procedure TP1} \label{sssec:TP1}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Procedure Identifier} & TP1\\
+\hline
+\textbf{Purpose} &  \begin{minipage}[t]{0.6\textwidth}
+This test procedure verifies whether the User Manager and the Visitor Manager can successfully:
+\begin{itemize}
+\addtolength{\itemindent}{0.5cm}
+\item receive requests from User Managed Beans and Visitor Managed Beans respectively
+\item correctly elaborate them
+\vspace{2,5mm}
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Procedure Steps} & Execute IT1, IT2 \\
+\hline
+\end{tabular}
+\caption{Test Procedure TP1}
+\end{center}
+\end{table}
+
+\subsubsection{Test Procedure TP2} \label{sssec:TP2}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Procedure Identifier} & TP2\\
+\hline
+\textbf{Purpose} &  This test procedures verifies whether Car Manager, Reservation Manager and Transaction Manager can receive and handle requests from User Manager. Also, this procedure verifies whether Reservation Manager can receive and handle requests from Car Manager and Transaction Manager from Reservation Manager \\
+\hline
+\textbf{Procedure Steps} & Execute IT3, IT4, IT5, IT6, IT7 \\
+\hline
+\end{tabular}
+\caption{Test Procedure TP2}
+\end{center}
+\end{table}
+\clearpage
+
+\subsubsection{Test Procedure TP3} \label{sssec:TP3}
+\vspace{10pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Procedure Identifier} & TP3\\
+\hline
+\textbf{Purpose} &  \begin{minipage}[t]{0.6\textwidth}
+This test procedure verifies whether the Java Persistence Module can successfully receive, handel and reply requests from:
+\begin{itemize}
+\addtolength{\itemindent}{0.5cm}
+\item Visitor Manager
+\item User Manager
+\item Car Manager
+\item Transaction Manager
+\item Reservation Manager
+\vspace{2,5mm}
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Procedure Steps} & Execute IT8, IT9 in this order \\
+\hline
+\end{tabular}
+\caption{Test Procedure TP3}
+\end{center}
+\end{table}
+\clearpage
+
+\subsubsection{Test Procedure TP4} \label{sssec:TP4}
+\vspace{10pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Procedure Identifier} & TP4\\
+\hline
+\textbf{Purpose} &  \begin{minipage}[t]{0.6\textwidth}
+This test procedure verifies whether the User Manager can successfully receive and handel requests from:
+\begin{itemize}
+\addtolength{\itemindent}{0.5cm}
+\item Car Manager
+\item Transaction Manager
+\item Reservation Manager
+\vspace{2,5mm}
+\end{itemize}
+It also verifies if Reservation Manager can receive and handle requests from Transaction Manager and Car Manager from Reservation Manager
+\end{minipage} \\
+\hline
+\textbf{Procedure Steps} & Execute IT10, IT11, IT12, IT13, IT14 \\
+\hline
+\end{tabular}
+\caption{Test Procedure TP4}
+\end{center}
+\end{table}
+
+
+\subsubsection{Test Procedure TP5} \label{sssec:TP5}
+\vspace{16pt}
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.6\textwidth}}
+\hline
+\textbf{Test Procedure Identifier} & TP5\\
+\hline
+\textbf{Purpose} &  This test procedure verifies whether the User Managed Beans can receive and elaborates requests from User Manager and Visitor Managed Beans from Visitor Manager \\
+\hline
+\textbf{Procedure Steps} & Execute IT15, IT16 \\
+\hline
+\end{tabular}
+\caption{Test Procedure TP5}
+\end{center}
+\end{table}
