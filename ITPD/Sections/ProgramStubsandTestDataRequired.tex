@@ -1,2 +1,58 @@
 \section{Program Stubs and Test Data Required} \label{sec:pstdr}
 %Based on the testing strategy and test design,identify any program stubs or special test data required for each integration step.
+
+\subsection{Program Stub}
+
+In order to carry out the testing phase for our project, we need two specific drivers that will simulate the behaviour of the client side.
+In particular, we need at least the Visitor Driver and the User Driver.
+\newline
+
+The Visitor Driver should simulate the calling of the following function:
+
+\begin{itemize}
+
+\item[\textbf{--}] create a new user, by filling the registration form;
+
+\item[\textbf{--}] log in, by inserting the proper username and password.
+
+\end{itemize}
+
+The User Driver should simulate the calling of the following function:
+
+\begin{itemize}
+
+\item[\textbf{--}] vizualize the Personal Page;
+
+\item[\textbf{--}] modify the information on his Personal Page;
+
+\item[\textbf{--}] reserve a car;
+
+\item[\textbf{--}] delete an already existent reservation;
+
+\item[\textbf{--}] vizualize the Safe Areas near to a location;
+
+\item[\textbf{--}] vizualize the Power Grid Stations near to a location;
+
+\item[\textbf{--}] vizualize all its past transactions;
+
+\end{itemize}
+
+\subsection{Test Data Required}
+
+In order to carry out the testing phase for our project, we need to populate some Database table that will simulate the real data that our application needs.
+\newline
+
+In particular, we need to populate the following tables:
+
+\begin{itemize}
+
+\item[\textbf{--}] User;
+\item[\textbf{--}] Car;
+\item[\textbf{--}] Reservation;
+\item[\textbf{--}] Safe Area;
+\item[\textbf{--}] Power Grid Station;
+\item[\textbf{--}] Transaction;
+
+\end{itemize}
+
+Moreover, it would be useful to have a dataset of location data, so that we can simulate inputs from from the users' smartphones and the \acs{gps} Receiver of the cars.
