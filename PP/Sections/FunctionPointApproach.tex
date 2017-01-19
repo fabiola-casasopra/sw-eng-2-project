@@ -1,2 +1,119 @@
 \section{Function Points Approach} \label{sec:functpointappr}
 %Apply Function Points to estimate the size 
+
+
+The \acl{fp} approach has been defined in 1975 by Allan Albrecht at IBM. This technique allows to evaluate the total dimension of the program, making the assumption that the dimension of software can be characterized based on the functionalities that it has to offer.
+Once we have estimated the size of our project, we can therefore estimete the effort needed to complete it.
+\newline
+
+The Albrecht's method identifies and count the number of function types, that represent the different functionality of the application.
+In particular, there are five distinct function types:
+
+\begin{itemize}
+
+\item[\textbf{--}] \textbf{\acl{ilf}}: \acs{ilf} is the homogeneous set of data used and managed by the application;
+
+\item[\textbf{--}] \textbf{\acl{eif}}: \acs{eif} is the homogeneous set of data used by the application but generated and maintained by other applications;
+
+\item[\textbf{--}] \textbf{\acl{ei}}: \acs{ei} is the elementary operation to elaborate data coming from the external environment;
+
+\item[\textbf{--}] \textbf{\acl{eo}}: \acs{eo} is the elementary operation that generates data for the external environment and it usually includes the elaboration of data from logic files.
+
+\item[\textbf{--}] \textbf{\acl{eq}}: \acs{eq} is the elementary operation that involves input and output, without significant elaboration of data from logic files.
+
+\end{itemize}
+
+In order to identify the development effort basing on these elements, Albrecht considered 24 applications basing on which he defined the number of \acs{fp} as the sum of Function Types weighted and he compiled the following table:
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}[t]{cccc}
+
+\hline
+\textbf{Function Types} & \textbf{Simple} & \textbf{Medium} & \textbf{Complex}\\
+\hline
+\acs{ei} & 3 &  4 & 6\\
+\hline
+\acs{eo} & 4 &  5 & 7\\
+\hline
+\acs{eq} & 3 &  4 & 6\\
+\hline
+\acs{ilf} & 7 &  10 & 15\\
+\hline
+\acs{eif} & 5 &  7 & 10\\
+\hline
+
+\end{tabular}
+\caption{Correlation between \acs{fp} weight and the development effort}
+\end{center}
+\end{table}
+
+In this way, we can calculate the \acs{fp}s of the our system as the sum of the \acs{fp}s obtained by evaluating each one of the five different types of Functional Points. In particular, we are going to define a number of items for every type of \acs{fp}s and assign them a weight representing its complexity.
+As far as the list of functionalities is concernerd, we obtain it from the previously written documents: the \acl{rasd} and the\acl{dd}.
+
+\begin{itemize}
+
+\item[\textbf{--}] \textbf{\acl{ilf}}: our application includes a number of \acs{ilf}s used to store the information about \textit{users}, \textit{cars}, \textit{reservation}, \textit{transactions}. \textit{User} and \textit{Car} entities have a simple structure as they are composed of a small number of field;\textit{Transaction} entities have a medium complex structure; \textit{Reservation} entity instead has a complex structure. Thus, we decide to adopt the \texttt{simple weight} for \textit{User} and \textit{Car}, the \texttt{medium weight} for \textit{Transaction} and the \texttt{complex weight} for \textit{Reservation}.
+In a mathematical way, this means that we have $2 * 7 + 1 * 10 + 1 * 15 = 49$ \acs{fp}s concerning \acs{ilf}s.
+
+\item[\textbf{--}] \textbf{\acl{eif}}: our application features only one \acs{eif}, in order to manage the interaction with \textbf{Google Maps} \acs{api}s. This information results in only one entity, that we guess has a complex structure. Thus, we decide to adopt a \texttt{complex weight}. 
+In a mathematical way, this means that we have $1 * 10 = 10$ \acs{fp}s concerning \acs{eif}s.
+
+\item[\textbf{--}] \textbf{\acl{ei}}: our application interacts with the user to allow them to:
+	\begin{itemize}
+
+	\item \textit{Login}, \textit{Logout} and \textit{Sign Up}: these are simple operations, so we can adopt the \texttt{simple weight} for them: $3 * 3 = 9$ 	\acs{fp}s.
+	
+	\item \textit{Update Account}: this is a simple operation, so we can adopt a \texttt{simple weight}: $1 * 3 = 3$ \acs{fp}s.
+
+	\item \textit{Reserve a Car}: this is not a simple operation, so we think that it is suitable to adopt the \texttt{medium weight}: $1 * 4 = 4$ \acs{fp}s.
+
+	\item \textit{Cancel a Reservation}: this is not a simple operation, so we think that it is suitable to adopt the \texttt{medium weight}: $1 * 4 = 4$ \acs{fp}s.
+
+\end{itemize}
+
+As a result, we get $9 + 3 + 4 + 4 = 20$ \acs{fp}s.
+
+\item[\textbf{--}] \textbf{\acl{eo}}: 
+
+\begin{itemize}
+
+	\item \textit{Look for Safe Areas and Power Grid Stations}: after a specific request, our application shows the user the \textit{Safe Areas} and the \textit{Power Grid Station}  around a choosen location. For this operation, we think that it is suitable to adopt the \texttt{complex weight}: $2 * 6 = 8$ \acs{fp}s.
+	
+	\item \textit{Amount to Pay}: when the user parks the car, our application provides a receipt, with the eventual discounts or charges already applied. For this operation, we think that it is suitable to adopt the \texttt{medium weight}: $1 * 5 = 5$ \acs{fp}s.
+
+As a result, we get $8 + 5 = 13$ \acs{fp}s.
+
+\end{itemize}
+
+\item[\textbf{--}] \textbf{\acl{eq}}: our application allows users to access some information. 
+
+\begin{itemize}
+
+	\item \textit{See Transactions' Details}: this is a simple operation, so we can adopt a \texttt{simple weight}: $1 * 3 = 3$ \acs{fp}s.
+\end{itemize}
+
+As a result, we get $3$ \acs{fp}s.
+
+\end{itemize}
+
+Now, we can compute the value for the \acl{ufp}, with the following formula:
+\[ UFP = \sum (\#elements\_of\_a\_given\_type * weight)\]
+
+Considering the previously part, we have that the total \acs{ufp} is computed as following:
+$UFP = 49 + 10 + 20 + 13 + 3 = 95$
+
+Thanks to this value, we can estimate the effort in two ways:
+
+\begin{itemize}
+
+\item[\textbf{--}] \textit{directly}: this approach is viable only in case we have some historical data, so that we can know how much time it usually take for developing a \acs{fp};
+
+\item[\textbf{--}] \textit{indirectly}: this approach consists in computing the size of the project in \acl{sloc}, starting from the total \acs{ufp}, and then use another approach, such as \acs{cocomo} II, in order to estimate the effort.
+
+\end{itemize}
+
+Since we don't have any historical data, we aren't able to make a direct estimation, so we take in consideration the undirect approach.
+In order to convert the \acs{ufp} into \acs{sloc}, we decided to use the standard conversion coefficient. We find out that the coefficient related to the specific framework we are using, that is \acs{jee}, is equal to $46$, as shown in the table at the following link: \url{http://www.qsm.com/resources/function-point-languages-table}
+Therefore, we can finallu compute the \acs{sloc} for our project:
+\[SLOC = 46 * FPs = 4370\]
