@@ -1,13 +1,169 @@
 \section{Code Inspection Process} \label{sec:code-proc}
 
 \subsection{Assigned Classes}
-%Classes that were assigned to the group: <state the namespace pattern and name of the classes that were assigned to you.>
+This sections contains the namespace pattern and the name of the class that were assigned to us:\\
+
+\textbf{\textit{Name}}: \textit{ContentPermissionServices}\\
+
+\textbf{\textit{Location}}:\textit{../apache-ofbiz-16.11.01/applications/content/src/main/java/org/apache/ofbiz/\\
+content/content/ContentPermissionServices.java}
 
 \subsection{Functional Role of the Assigned  Set of Classes}
 %Functional role of assigned set of classes: <elaborate on the func- tional role you have identified for the class cluster that was assigned to you, also, elaborate on how you managed to understand this role and provide the necessary evidence, e.g., javadoc, diagrams, etc.>
+This class, like the name suggest, provides services for granting operation permissions on content entities in a data-driven manner. It does it with the use of two methods: \textit{"checkContentPermission"} and \textit{"checkAssocPermission"}. The first one check, thanks to a lot of tests, if the user have the permission to perform operations; the second one check if there is a permission to associate a content to another. 
 
 \subsection{List of Issue}
-%List of issues found by applying the checklist: <report the class- es/code fragments that do not fulfill some points in the check list. Explain which point is not fulfilled and why.>
+Here is presented a table with all the possible issues listed before and if they are present or not in the class assigned to us.
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.9\textwidth}}
+\hline
+\textbf{Issue 1} & This issue is not present\\
+\hline
+\textbf{Issue 2} & This issue is not present\\
+\hline
+\textbf{Issue 3} & There isn't this issue: the class is properly called \\
+\hline
+\textbf{Issue 4} & This issue is not present\\
+\hline
+\textbf{Issue 5} & There isn't this issue: the methods are correctly called\\
+\hline
+\textbf{Issue 6} & This issue is not present: the attributes are properly called\\
+\hline
+\textbf{Issue 7} & There isn't constant\\
+\hline
+\textbf{Issue 8} & This issue is present at lines: 108 (five spaces), 114 (five spaces), 192 (five spaces), 197 (five spaces), 226 (two spaces)\\
+\hline
+\textbf{Issue 9} & This issue is not present: any tabs are used\\
+\hline
+\textbf{Issue 10} & All the class contains the bracing style "Kernighan and Ritchie", this is not an issue\\
+\hline
+\textbf{Issue 11} & This issue is present at lines: 171, 180, 200, 205, 267\\
+\hline
+\textbf{Issue 12} & Blank lines not correct: 97, 137, 152, 168, 178, 184, 194, 199, 221, 229, 237, 242, 248, 269, 295, 328\\
+\hline
+\textbf{Issue 13} & Lines that exceed 80 characters but that can be reduced: 49, 72, 79-81, 86, 88, 91-92, 100, 102, 138, 140, 154\\
+\hline
+\textbf{Issue 14} & Lines that exceed 120 characters: 95, 96, 124, 153, 166, 169, 208\\
+\hline
+\textbf{Issue 15} & This issue is present at lines: 222-223 (line breaks before the OR operator) \\
+\hline
+\textbf{Issue 16} & This issue is not present\\
+\hline
+\textbf{Issue 17} & At the line 110 the statement is not aligned with the beggining of the expression at the same level \\
+\hline
+\textbf{Issue 18} & There are blocks of code not commented and all the second method isn't commented too\\
+\hline
+\textbf{Issue 19} & At lines 101 and 103 there isn't a date when the commented out code can be removed; at line 258 there isn't also a motivation because the code is commented out\\
+\hline
+\textbf{Issue 20} & This issue is not present: there is only a single public class in our file\\
+\hline
+\end{tabular}
+\caption{Check issues from 1 to 20}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.9\textwidth}}
+\hline
+\textbf{Issue 21} & This issue is not present: the public class is the first in the file\\
+\hline
+\textbf{Issue 22} & This issue is not present\\
+\hline
+\textbf{Issue 23} & In the javadoc there is this class and the parameter and return of the first method but there is anything about the second method, so the second method is not in the javadoc\\
+\hline
+\textbf{Issue 24} & This issue is not present: package and import are in the correct order\\
+\hline
+\textbf{Issue 25} & This issue is not present: the class is defined in the correct order\\
+\hline
+\textbf{Issue 26} & This issue is not present\\
+\hline
+\textbf{Issue 27} & The class methods are too long: they do a lot of controls and actions\\
+\hline
+\textbf{Issue 28} & This issue is not present\\
+\hline
+\textbf{Issue 29} & This issue is not present\\
+\hline
+\textbf{Issue 30} & This issue is not present\\
+\hline
+\textbf{Issue 31} & This issue is not present\\
+\hline
+\textbf{Issue 32} & This issue is not present: all the variables are initialized where they are declarated\\
+\hline
+\textbf{Issue 33} & In this class we can find a lot of declarations maked not at the beggining of a block:ex line 111\\
+\hline
+\textbf{Issue 34} & This issue is not present\\
+\hline
+\textbf{Issue 35} & This issue is not present\\
+\hline
+\textbf{Issue 36} & This issue is not present\\
+\hline
+\textbf{Issue 37} & There aren't arrays\\
+\hline
+\textbf{Issue 38} & There isn't this issue\\
+\hline
+\textbf{Issue 39} & There aren't arrays\\
+\hline
+\textbf{Issue 40} & The objects are correctly compared\\
+\hline
+\end{tabular}
+\caption{Check issues from 21 to 40}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|p{0.9\textwidth}}
+\hline
+\textbf{Issue 41} & The output of this class is in the log so there is a grammatical error at line 96: "depricated" instead of "deprecated"\\
+\hline
+\textbf{Issue 42} & At lines 129 and 215 there isn't the specific error or the guide to solve it, at line 276 there isn't the guide to solve it\\
+\hline
+\textbf{Issue 43} & This issue is not present\\
+\hline
+\textbf{Issue 44} & This issue is not present\\
+\hline
+\textbf{Issue 45} & This issue is not present\\
+\hline
+\textbf{Issue 46} & This issue is not present: parenthesis are used in the correct way\\
+\hline
+\textbf{Issue 47} & There isn't division\\
+\hline
+\textbf{Issue 48} & In this class there isn't integer arithmetic\\
+\hline
+\textbf{Issue 49} & This issue is not present\\
+\hline
+\textbf{Issue 50} & This issue is not present\\
+\hline
+\textbf{Issue 51} & There are implicit type conversion at lines: 126, 134, 143, 157, 170\\
+\hline
+\textbf{Issue 52} & This issue is not present\\
+\hline
+\textbf{Issue 53} & This issue is not present\\
+\hline
+\textbf{Issue 54} & There isn't switch statement\\
+\hline
+\textbf{Issue 55} & There isn't switch statement \\
+\hline
+\textbf{Issue 56} & There aren't loops\\
+\hline
+\textbf{Issue 57} & This class doesn't manage files\\
+\hline
+\textbf{Issue 58} & This class doesn't manage files\\
+\hline
+\textbf{Issue 59} & This class doesn't manage files\\
+\hline
+\textbf{Issue 60} & This class doesn't manage files\\
+\hline
+\end{tabular}
+\caption{Check issues from 41 to 60}
+\end{center}
+\end{table}
+
 
 %\subsection{Other Problems}
 %Any other problem you have highlighted: <list here all the parts of code that you think create or may create a bug and explain why.>
