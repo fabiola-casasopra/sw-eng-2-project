@@ -53,36 +53,62 @@ As far as the list of functionalities is concernerd, we obtain it from the previ
 
 \begin{itemize}
 
-\item[\textbf{--}] \textbf{\acl{ilf}}: our application includes a number of \acs{ilf}s used to store the information about \textit{users}, \textit{cars}, \textit{reservation}, \textit{transactions}. \textit{User} and \textit{Car} entities have a simple structure as they are composed of a small number of field;\textit{Transaction} entities have a medium complex structure; \textit{Reservation} entity instead has a complex structure. Thus, we decide to adopt the \texttt{simple weight} for \textit{User} and \textit{Car}, the \texttt{medium weight} for \textit{Transaction} and the \texttt{complex weight} for \textit{Reservation}.
-In a mathematical way, this means that we have $2 * 7 + 1 * 10 + 1 * 15 = 49$ \acs{fp}s concerning \acs{ilf}s.
+\item[\textbf{--}] \textbf{\acl{ilf}}: our application includes a number of \acs{ilf}s used to store the information needed to offer the required functionalities. In particular, this information are about \textit{users}, \textit{cars}, \textit{reservation}, \textit{safe areas}, \textit{power grid station} and\textit{transactions}. 
 
-\item[\textbf{--}] \textbf{\acl{eif}}: our application features only one \acs{eif}, in order to manage the interaction with \textbf{Google Maps} \acs{api}s. This information results in only one entity, that we guess has a complex structure. Thus, we decide to adopt a \texttt{complex weight}. 
-In a mathematical way, this means that we have $1 * 10 = 10$ \acs{fp}s concerning \acs{eif}s.
+\textit{User} entity has a simple structure as it is composed of a small number of field;\textit{Car} and \textit{Transaction} entities have a medium complex structure; \textit{Reservation} entity instead has a complex structure. Thus, we decide to adopt the \texttt{simple weight} for \textit{User}, the \texttt{medium weight} for \textit{Car}, \textit{Safe Areas}, \textit{Power Grid Station} and \textit{Transaction} and, finally, the \texttt{complex weight} for \textit{Reservation}.
+In a mathematical way, this means that we have $1 * 7 + 4 * 10 + 1 * 15 = 62$ \acs{fp}s concerning \acs{ilf}s.
+
+\item[\textbf{--}] \textbf{\acl{eif}}: our application features only one \acs{eif}, in order to manage the interaction with \textbf{Google Maps} \acs{api}s. 
+Our application interacts with the Mapping Service in different ways:
+	\begin{itemize}
+	
+	\item given an address, get the correspondent pair of coordinates (reverse geocoding);
+
+	\item retrieve the graphical representation of the city map to be displayed on the users' smartphone.
+
+    \end{itemize}
+
+Since we may hypotize that these intercations are complex and there is a large amount of data to be retrieved, we decide to adopt a \texttt{complex weight}. 
+In a mathematical way, this means that we have $2 * 10 = 20$ \acs{fp}s concerning \acs{eif}s.
 
 \item[\textbf{--}] \textbf{\acl{ei}}: our application interacts with the user to allow them to:
 	\begin{itemize}
 
-	\item \textit{Login}, \textit{Logout} and \textit{Sign Up}: these are simple operations, so we can adopt the \texttt{simple weight} for them: $3 * 3 = 9$ 	\acs{fp}s.
+	\item \textit{Login}, \textit{Logout}: these are simple operations, so we can adopt the \texttt{simple weight} for them: $2 * 3 = 6$ \acs{fp}s.
+	
+	\item \textit{Sign Up}: this is not a simple operation, as it involves a number of checks on the validity of the fields. So, we think that it is suitable to adopt the \texttt{medium weight}: $1 * 4 = 4$ \acs{fp}s.
 	
 	\item \textit{Update Account}: this is a simple operation, so we can adopt a \texttt{simple weight}: $1 * 3 = 3$ \acs{fp}s.
 
-	\item \textit{Reserve a Car}: this is not a simple operation, so we think that it is suitable to adopt the \texttt{medium weight}: $1 * 4 = 4$ \acs{fp}s.
+	\item \textit{Reserve a Car}: this is not a simple operation, since a large number of components are involved. So, we think that it is suitable to adopt the \texttt{complex weight}: $1 * 6 = 6$ \acs{fp}s.
+	
+	\item \textit{Look for Safe Areas and Power Grid Stations}: this is not a simple operation, as it involves interaction with other components. So, we think that it is suitable to adopt the \texttt{complex weight}: $2 * 6 = 12$ \acs{fp}s.
+	
+	after a specific request, our application shows the user the \textit{Safe Areas} and the \textit{Power Grid Station}  around a choosen location. For this operation, we think that it is suitable to adopt the \texttt{complex weight}: $2 * 6 = 12$ \acs{fp}s.
 
-	\item \textit{Cancel a Reservation}: this is not a simple operation, so we think that it is suitable to adopt the \texttt{medium weight}: $1 * 4 = 4$ \acs{fp}s.
+	\item \textit{Cancel a Reservation}: this is a simple operation, so we think that it is suitable to adopt the \texttt{simple weight}: $1 * 3 = 3$ \acs{fp}s.
+	
+	\item \textit{View Transaction History}: this is a simple operation, so we can adopt a \texttt{simple weight}: $1 * 3 = 3$ \acs{fp}s.
 
 \end{itemize}
 
-As a result, we get $9 + 3 + 4 + 4 = 20$ \acs{fp}s.
+As a result, we get $6 + 4 + 3 + 6 + 12 + 3 + 3= 37$ \acs{fp}s.
 
 \item[\textbf{--}] \textbf{\acl{eo}}: 
 
 \begin{itemize}
 
-	\item \textit{Look for Safe Areas and Power Grid Stations}: after a specific request, our application shows the user the \textit{Safe Areas} and the \textit{Power Grid Station}  around a choosen location. For this operation, we think that it is suitable to adopt the \texttt{complex weight}: $2 * 6 = 8$ \acs{fp}s.
-	
-	\item \textit{Amount to Pay}: when the user parks the car, our application provides a receipt, with the eventual discounts or charges already applied. For this operation, we think that it is suitable to adopt the \texttt{medium weight}: $1 * 5 = 5$ \acs{fp}s.
+	\item \textit{Notify a User that his Reservation has expired}: for this operation, we think that it is suitable to adopt the \texttt{simple weight}: $1 * 4 = 4$ \acs{fp}s.
 
-As a result, we get $8 + 5 = 13$ \acs{fp}s.
+	\item \textit{Notify a User that he cannot park the Car since it is not in a Safe Area}: for this operation, we think that it is suitable to adopt the \texttt{simple weight}: $1 * 4 = 4$ \acs{fp}s.	
+	
+	\item \textit{Notify a User that his fee will be charged and why}: for this operation, we think that it is suitable to adopt the \texttt{simple weight}: $1 * 4 = 4$ \acs{fp}s.
+	
+	\item \textit{Notify a User that his fee will be discounted and why}: for this operation, we think that it is suitable to adopt the \texttt{simple weight}: $1 * 4 = 4$ \acs{fp}s.
+	
+	\item \textit{Notify the User the amount to pay}:  for this operation, we think that it is suitable to adopt the \texttt{simple weight}: $1 * 4 = 4$ \acs{fp}s.
+
+As a result, we get $5 * 4 = 20$ \acs{fp}s.
 
 \end{itemize}
 
@@ -90,7 +116,7 @@ As a result, we get $8 + 5 = 13$ \acs{fp}s.
 
 \begin{itemize}
 
-	\item \textit{See Transactions' Details}: this is a simple operation, so we can adopt a \texttt{simple weight}: $1 * 3 = 3$ \acs{fp}s.
+	\item \textit{Retrieve Transactions' Details}: this is a simple operation, so we can adopt a \texttt{simple weight}: $1 * 3 = 3$ \acs{fp}s.
 \end{itemize}
 
 As a result, we get $3$ \acs{fp}s.
@@ -101,7 +127,7 @@ Now, we can compute the value for the \acl{ufp}, with the following formula:
 \[ UFP = \sum (\#elements\_of\_a\_given\_type * weight)\]
 
 Considering the previously part, we have that the total \acs{ufp} is computed as following:
-$UFP = 49 + 10 + 20 + 13 + 3 = 95$
+$UFP = 62 + 20 + 37 + 20 + 3 = 142$
 
 Thanks to this value, we can estimate the effort in two ways:
 
@@ -115,5 +141,5 @@ Thanks to this value, we can estimate the effort in two ways:
 
 Since we don't have any historical data, we aren't able to make a direct estimation, so we take in consideration the undirect approach.
 In order to convert the \acs{ufp} into \acs{sloc}, we decided to use the standard conversion coefficient. We find out that the coefficient related to the specific framework we are using, that is \acs{jee}, is equal to $46$, as shown in the table at the following link: \url{http://www.qsm.com/resources/function-point-languages-table}
-Therefore, we can finallu compute the \acs{sloc} for our project:
-\[SLOC = 46 * FPs = 4370\]
+Therefore, we can finally compute the \acs{sloc} for our project:
+\[SLOC = 46 * FPs = 6532\]
