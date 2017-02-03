@@ -39,6 +39,7 @@ We supposed that our domain has this properties:
 \item[\textbf{D6}]For each car there is an insurance.
 \item[\textbf{D7}]Reservation's time must be included between 00:00 and 23:59.
 \item[\textbf{D8}]The position inserted by the user must be an existing place.
+\item[\textbf{D9}]All the payment functionality, such as check if the credit car is valid and make the transaction secure, are provided by a Payment Service Provider.
 \end{itemize}
 
 
@@ -78,8 +79,8 @@ Now, we want to explain exhaustively what are our system's goal.
 The following part is necessary for avoid ambiguity or misunderstanding during the reading of this document. 
 \begin{itemize}
 \item VISITOR: he is a person that is not register in the system. He can only see the homepage and go to the form for the registration or log-in.
-\item USER: he is a person that is registered and logged in the system. He is identified by a name, surname, nickname, e-mail, password (given by the system at the end of the registration), telephone number, address, driving license information and all the payment information (such as number of credit card and card's deadline) that must be verified by the system. He can do all the services that are provided by "\emph{PowerEnJoy}".
-\item CAR: we intend an electric car that can be rent trough the system. It can be available or reserved and the system will lock and unlock it when necessary. It is parked in a safe area and it may be plugged into a power grid station.
+\item USER: he is a person that is registered and logged in the system. He is identified by a name, surname, nickname, e-mail, password (given by the system at the end of the registration), telephone number, address, driving license information and all the payment information (such as number of credit card and card's deadline) that must be verified by the interaction between the system and the Payment Service Provider. He can do all the services that are provided by "\emph{PowerEnJoy}".His position is knowed using the GPS.
+\item CAR: we intend an electric car that can be rent trough the system. It can be available or reserved and the system will lock and unlock it when necessary. It is parked in a safe area and it may be plugged into a power grid station.The system knows its position thanks to the use of GPS.
 \item RIDE: we intend all the route that a user accomplishes with the same car from the moment when he pick up the car to the moment when he left it in a safe area.   
 \item CHARGE: we intend the debt that the user must pay at the end of a ride. It is calculate from a specific amount of money per minute: the timer starts at the begin of the ride until the end of it. The charge can be also modified by some discount or a fee when particular situations occur. It also exists a charge if the user reserve a car but he doen't pick it up whithin one hour from the reservation.  
 
@@ -109,7 +110,7 @@ Here there is the acronims list:
 
 
 \subsection{Overview} \label{subsec:overview}
-This document is structured in four parts:
+This document is structured in five parts:
 \begin{itemize}
 \item[\textbf{Section \ref{sec:intro}}]There is an introduction with this document's purpose, the scope of this project and its aim, the actor that can use the system and in which way, some definitions to avoid misunderstanding during the reading of the document and, most important, the goal of our project described all in a brief but comprehensive way.  
 \item[\textbf{Section \ref{sec:description}}]There are more specifications about the requirements, the interfaces with external agents, constraints and assumptions.
