@@ -1,7 +1,7 @@
 \section{\acs{cocomo} Approach} \label{sec:cocomo}
 %Apply COCOMO to estimate effort and cost.
 
-In this section of the document, we are going to apply the \acs{cocomo} approachin order to estimate effort and cost for our project.
+In this section of the document, we are going to apply the \acs{cocomo} approach in order to estimate effort and cost for our project.
 In order to do that, we are going to refer to the \acs{cocomo} II model definition manual at the following link: \url {http://csse.usc.edu/csse/research/COCOMOII/cocomo2000.0/CII_modelman2000.0.pdf}.
 
 \begin{table}[htbp]
@@ -31,7 +31,7 @@ We considered the following scale drivers:
 
 \begin{itemize}
 
-\item[\textbf{--}] \textit{\acl{prec}}: if a product is similar to several previously developed projects, then \acs{prec} is high. Since on the market there are already some project similar to our, we rate this scale driver as \texttt{High}, with a corresponding value of $2.48$
+\item[\textbf{--}] \textit{\acl{prec}}: if a product is similar to several previously developed projects, then \acs{prec} is high. Since on the market there are already some project similar to ours, we rate this scale driver as \texttt{High}, with a corresponding value of $2.48$
 
 \item[\textbf{--}] \textit{\acl{flex}}: if there are no specific constraints to conform to pre-established requirements and external interface specifications, then \acs{flex} is high. Since we had to remain compliance with the specification given, but with some relaxation for some of the specifications, we rate this scale driver as \texttt{Nominal}, with a corresponding value of $3.04$
 
@@ -40,7 +40,7 @@ We considered the following scale drivers:
 \item[\textbf{--}] \textit{\acl{team}}: if all stakeholders are able to work in a team and share the same vision and commitment, then \acs{team} is high. In these past months our team worked very well together, but we think that the external stakeholders may have a vision different (even a little) from ours.
 For this reason, we rate this scale driver as \texttt{High}, with a corresponding value of $2.19$
 
-\item[\textbf{--}] \textit{\acl{pmat}}: in order to rate this driver, we have to refers to a well known method for assessing the maturity of a software organization, that is \acs{cmmi}. We can estimate that our project is at \texttt{Maturity Level 3 - Defined}, that correponds to a \acs{pmat} at level \texttt{High} and a value of $3.12$.
+\item[\textbf{--}] \textit{\acl{pmat}}: in order to rate this driver, we have to refers to a well-known method for assessing the maturity of a software organization, that is \acs{cmmi}. We can estimate that our project is at \texttt{Maturity Level 3 - Defined}, that correponds to a \acs{pmat} at level \texttt{High} and a value of $3.12$.
 
 \end{itemize}
 
@@ -99,7 +99,7 @@ Notice that while the \acs{prec} and \acs{flex} scale factors are largely intrin
 
 \begin{itemize}
 	
-	\item \textit{\acl{rely}}: this is the measure of the extent to which the software must perform its intended function over a period of time. If the effect of a software failure is only slight inconvenience then \acs{rely} is very low. If a failure would risk human life then \acs{rely} is very high. In our case, we think that the appropriate rate for this driver is \texttt{Nominal}, with a corresponding value of $1.00$.
+	\item \textit{\acl{rely}}: this is the measure of the extent to which the software must perform its intended function over a period of time. If the effect of a software failure is only slight inconvenience, then \acs{rely} is very low. If a failure would risk human life, then \acs{rely} is very high. In our case, we think that the appropriate rate for this driver is \texttt{Nominal}, with a corresponding value of $1.00$.
 	
 	\item \textit{\acl{data}}: this cost driver attempts to capture the effect large test data requirements have on product development. \acs{data} is capturing the effort needed to assemble and maintain the data required to complete test of our program. In our case, we can estimate that the rate for this driver is \texttt{Nominal}, with a corresponding value of $1.00$.
 	
@@ -117,7 +117,7 @@ Notice that while the \acs{prec} and \acs{flex} scale factors are largely intrin
 	
 	\item \textit{\acl{time}}: this is a measure of the execution time constraint imposed upon a software system. The rating is expressed in terms of the percentage of available execution time expected to be used by the system or subsystem consuming the execution time resource. The rating ranges from \texttt{Nominal}, less than $50\%$ of the execution time resource used, to \texttt{Extra High}, when $95\%$ of the execution time resource is consumed. In our case, we can estimate that the rate for this driver is \texttt{Nominal}, with a corresponding value of $1.00$
 	
-	\item \textit{\acl{stor}}: this rating represents the degree of main storage constraint imposed on a software system or subsystem. The rating ranges from \texttt{Nominal}, less than $50\%$ , to \texttt{Extra High}, whan  $95\%$. In our case, we can estimate that the rate for this driver is \texttt{Nominal}, with a corresponding value of $1.00$
+	\item \textit{\acl{stor}}: this rating represents the degree of main storage constraint imposed on a software system or subsystem. The rating ranges from \texttt{Nominal}, less than $50\%$, to \texttt{Extra High}, when  $95\%$. In our case, we can estimate that the rate for this driver is \texttt{Nominal}, with a corresponding value of $1.00$
 	
 	\item \textit{\acl{pvol}}: "platform" is used here to mean the complex of hardware and software (\acs{os}, \acs{dbms}, etc.) the software product calls on to perform its tasks. This rating ranges from \texttt{Low}, where there is a major change every 12 months, to \texttt{Very High}, where there is a major change every two weeks. In our case, we can estimate that the rate for this driver is \texttt{Nominal}, with a corresponding value of $1.00$
 	
@@ -134,7 +134,7 @@ Evaluation should be based on the capability of the programmers as a team rather
 
 	\item \textit{\acl{pcon}}: the rating for this cost driver is in terms of the project's annual personnel turnover: from 3\%, very high continuity, to 48\%, very low continuity. In our case, we can estimate that the rate for this driver is \texttt{Very High}, with a corresponding value of $0.81$
 	
-	\item \textit{\acl{apex}}: the rating for this cost driver is dependent on the level of applications experience of the project team developing the software system or subsystem. The ratings are defined in terms of the project team's equivalent level of experience with this type of application. A \texttt{Very Low} rating is for application experience of less than 2 months. A very \texttt{Very High} is for experience of 6 years or more. In our case, we can estimate that the rate for this driver is \texttt{Low}, with a corresponding value of $1.10$
+	\item \textit{\acl{apex}}: the rating for this cost driver is dependent on the level of applications experience of the project team developing the software system or subsystem. The ratings are defined in terms of the project team's equivalent level of experience with this type of application. A \texttt{Very Low} rating is for application experience of less than 2 months. A \texttt{Very High} is for experience of 6 years or more. In our case, we can estimate that the rate for this driver is \texttt{Low}, with a corresponding value of $1.10$
 	
 	\item \textit{\acl{plex}}: the Post-Architecture model broadens the productivity influence of platform experience by recognizing the importance of understanding the use of more powerful platforms, including more graphic user interface, database, networking, and distributed middleware capabilities. In our case, we can estimate that the rate for this driver is \texttt{Very Low}, with a corresponding value of $1.19$.
 	
@@ -177,9 +177,9 @@ In conclusion, we calculated this value for \textbf{effort}, \textbf{total cost}
 
 \begin{itemize}
 
-\item[\textbf{--}] \textbf{Effort}: $28.2$ Person-months
-\item[\textbf{--}] \textbf{Total Cost}: $\$56386$, if we consider an average cost equals to $\$2000$ per Person-months
-\item[\textbf{--}] \textbf{Duration}: $11.0$ Months
-\item[\textbf{--}] \textbf{Team Size}: \[\frac{\textbf{Effort}}{\textbf{Duration}} = \frac{28.2}{11.0} = 2.56\:members\] 
+\item[\textbf{--}] \textbf{Effort}: $34.8$ Person-months
+\item[\textbf{--}] \textbf{Total Cost}: $\$69636$, if we consider an average cost equals to $\$2000$ per Person-months
+\item[\textbf{--}] \textbf{Duration}: $11.8$ Months
+\item[\textbf{--}] \textbf{Team Size}: \[\frac{\textbf{Effort}}{\textbf{Duration}} = \frac{34.8}{11.8} = 2.95\:members\] 
 
 \end{itemize}

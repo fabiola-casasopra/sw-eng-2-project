@@ -9,7 +9,7 @@
 \item[\textbf{G1.R4}] During the registration, visitors must insert a valid driving license.
 \item[\textbf{G1.R5}] During the registration, visitors must agree with the privacy conditions to use the system.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Visitor Manager} which provides the functionality of check the validity and correctness of user's informations.
+\item All these requirements are satisfied by \textbf{Visitor Manager} which provides the functionality of check the validity and correctness of user's information.
 \end{itemize}
 
 \item[\textbf{G2.R1}] The registration must be successfully completed.
@@ -24,30 +24,30 @@
 \item[\textbf{G3.R2}] In the log in form the user must insert the correct username.
 \item[\textbf{G3.R3}] In the log in form the user must insert the correct password.
 \item[\textbf{G3.R4}] If the visitor insert the wrong data, the system shows an error and return to the log in page.
-\item[\textbf{G3.R5}] If the user doesn't remember the password he can receive it trough a special command.
+\item[\textbf{G3.R5}] If the user doesn't remember the password he can receive it through a special command.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Visitor Manager} which provides the functionality of check if the Log In is valid, if so it has to authenticate the user. In the UX Diagram there is the "Log in Page" with a form that check the validity of username and password: if they are correct the application shows the "General Page", otherwise it shows an error message.
+\item All these requirements are satisfied by \textbf{Visitor Manager} which provides the functionality of check if the Log In is valid, if so it has to authenticate the user. In the UX Diagram there is the "Log in Page" with a form that check the validity of username and password: if they are correct the application shows the "General Page", otherwise it shows an error message.
 \end{itemize}
 
 \item[\textbf{G4.R1}] The user must insert a valid address or give to the system his position.
-\item[\textbf{G4.R2}] All cars position must be knowed.
+\item[\textbf{G4.R2}] All cars position must be known.
 \item[\textbf{G4.R3}] All cars are set as available or not.
-\item[\textbf{G4.R4}] The list of nearest cars is made trough calculate the distance between car and user's position.
+\item[\textbf{G4.R4}] The list of nearest cars is made through calculate the distance between car and user's position.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Car Manager} which provides the functionality of manage the cars position and it is obtained allowing the Car Manager to query the Database. But first of all they are satisfied thanks to the use of GPS. We can also see the algorithm to look for a near car in the specific page. We can see that in the "Reservation Page" in the UX Diagram, first of all the user must insert a correct position: if it is valid the page shows the availables cars, otherwise it make an error message. Only if the user insert a correct position he can select one car from a list in the map.
+\item All these requirements are satisfied by \textbf{Car Manager} which provides the functionality of manage the cars position and it is obtained allowing the Car Manager to query the Database. But first of all they are satisfied thanks to the use of GPS. We can also see the algorithm to look for a near car in the specific page. We can see that in the "Reservation Page" in the UX Diagram, first of all the user must insert a correct position: if it is valid the page shows the available cars, otherwise it makes an error message. Only if the user insert a correct position he can select one car from a list in the map.
 \end{itemize}
 
 \item[\textbf{G5.R1}] The user must be correctly logged in.
 \item[\textbf{G5.R2}] The user must select which car he wants.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Reservation Manager} which provides the functionality of allow users to reserve a free car and, quering the Database, it can keep track of all the aspects such as the duration. We also use the Google Maps API to show the map.
+\item All these requirements are satisfied by \textbf{Reservation Manager} which provides the functionality of allow users to reserve a free car and, querying the Database, it can keep track of all the aspects such as the duration. We also use the Google Maps API to show the map.
 \end{itemize}
 
 \item[\textbf{G6.R1}] The position of the user and the car must be the same.
 \item[\textbf{G6.R2}] The reservation must not be expired.
 \item[\textbf{G6.R3}] The system must recognize the correct car reserved by a specific user to unlock the correct one.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Reservation Manager} which provides the functionality of query the Database to know all about a reservation. There is also the help of \textbf{User Manager} to know the user's position that is inserted in the DB. When there is an active reservation in the UX Diagram from the "Reservation Page" is showed the summary in wich there is the functionality "I'm there".
+\item All these requirements are satisfied by \textbf{Reservation Manager} which provides the functionality of query the Database to know all about a reservation. There is also the help of \textbf{User Manager} to know the user's position that is inserted in the DB. When there is an active reservation in the UX Diagram from the "Reservation Page" is showed the summary in which there is the functionality "I'm there".
 \end{itemize}
 
 \item[\textbf{G7.R1}] The car's engine must ignites.
@@ -56,34 +56,34 @@
 \item[\textbf{G7.R4}] The system must shows all user's transactions.
 \item[\textbf{G7.R5}] The user must select a specific transaction to see its details.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Transaction Manager} which provides the functionality of charge the user and communicates with the Database to show all the details for all the transaction of a user, but also to aply the correct price to the reservation if there are discounts or penalties. There is also the help of an external service to verify the user's credit card information. We can see the algorithm for this menagment in the specific page. In the UX Diagram we can see the "Transaction Page" that contains the info, such as date, duration, ammount, of all the user's transactions.
+\item All these requirements are satisfied by \textbf{Transaction Manager} which provides the functionality of charge the user and communicates with the Database to show all the details for all the transaction of a user, but also to apply the correct price to the reservation if there are discounts or penalties. There is also the help of an external service to verify the user's credit card information. We can see the algorithm for this management in the specific page. In the UX Diagram we can see the "Transaction Page" that contains the info, such as date, duration, amount, of all the user's transactions.
 \end{itemize}
 
 \item[\textbf{G8.R1}] There must be a display on the car that communicates with the system.
 \item[\textbf{G8.R2}] The charge is update every minute.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Car Manager} and \textbf{Reservation Manger} which, quering the DB, can show to the user all the details in the car's display.
+\item All these requirements are satisfied by \textbf{Car Manager} and \textbf{Reservation Manger} which, querying the Database, can show to the user all the details in the car's display.
 \end{itemize}
 
 \item[\textbf{G9.R1}] It must be passed one hour from the registration.
-\item[\textbf{G9.R2}] Is applyed a fee of 1 euro to the user involved.
+\item[\textbf{G9.R2}] Is applied a fee of 1 euro to the user involved.
 \item[\textbf{G9.R3}] The reservation is deleted.
 \item[\textbf{G9.R4}] In the page there is a timer.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Reservation Manager} which knows the reservation time and ask to \textbf{Transaction Manager} to apply the fee to the user. In the UX Diagram if there is already an active reservation the application shows all the summary of the reservation with the timer.
+\item All these requirements are satisfied by \textbf{Reservation Manager} which knows the reservation time and ask to \textbf{Transaction Manager} to apply the fee to the user. In the UX Diagram if there is already an active reservation the application shows all the summary of the reservation with the timer.
 \end{itemize}
 
 \item[\textbf{G10.R1}] The user must be correctly logged in.
 \item[\textbf{G10.R2}] The user must go to the reservation page.
 \item[\textbf{G10.R3}] Mustn't be passed one hour from the reservation.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Reservation Manager}. When there is an active reservation in the UX Diagram from the "Reservation Page" is showed the summary in wich there is the functionality "Delete".
+\item All these requirements are satisfied by \textbf{Reservation Manager}. When there is an active reservation in the UX Diagram from the "Reservation Page" is showed the summary in which there is the functionality "Delete".
 \end{itemize}
 
 \item[\textbf{G11.R1}] The reservation is correctly deleted by a user or it is expired. 
 \item[\textbf{G11.R2}] The car is set available in the list.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Reservation Manager} which knows the reservation time or that it is deleted and communicates to \textbf{Car Manager} to set the car as available.
+\item All these requirements are satisfied by \textbf{Reservation Manager} which knows the reservation time or that it is deleted and communicates to \textbf{Car Manager} to set the car as available.
 \end{itemize}
 
 
@@ -91,7 +91,7 @@
 \item[\textbf{G12.R2}] The car must be left in a safe area.
 \item[\textbf{G12.R3}] The user and all any passengers must exit from the car.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Car Manager} wich know all the car's details.
+\item All these requirements are satisfied by \textbf{Car Manager} which knows all the car's details.
 \end{itemize}
 
 
@@ -101,26 +101,26 @@
 \item[\textbf{G13.R4}] In the car there is a sensor which controls how many battery is empty, if it is no more than 50 per cent the system applied a discount.
 \item[\textbf{G13.R5}] If the user takes care to link the car to recharge the car he will have a discount.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Transaction Manager} that can query the Database to see the discounts.
+\item All these requirements are satisfied by \textbf{Transaction Manager} that can query the Database to see the discounts.
 \end{itemize}
 
 \item[\textbf{G14.R1}] The car must have been recently used.
 \item[\textbf{G14.R2}] Most of 80 per cent of the battery is empty.
 \item[\textbf{G14.R3}] The car is left far away from a safe area.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Transaction Manager} that can query the Database to see the penalties.
+\item All these requirements are satisfied by \textbf{Transaction Manager} that can query the Database to see the penalties.
 \end{itemize}
 
 \item[\textbf{G15.R1}] The user must go to the specific page.
 \item[\textbf{G15.R2}] The user must insert a correct position.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Reservation Manager} that can query the Database to see the positions. We can see that in the specific algorithm. We can see that in the UX Diagram where, if the user is logged in, he can go to the "SafeArea Page" and insert a postion in the form: if the position isn't correct it shows an error message, otherwise it shows a summary with all the safe areas on the map.
+\item All these requirements are satisfied by \textbf{Reservation Manager} that can query the Database to see the positions. We can see that in the specific algorithm. We can see that in the UX Diagram where, if the user is logged in, he can go to the "Safe Area Page" and insert a position in the form: if the position isn't correct it shows an error message, otherwise it shows a summary with all the safe areas on the map.
 \end{itemize} 
 
 \item[\textbf{G16.R1}] The user must go to the specific page.
 \item[\textbf{G16.R2}] The user must insert a correct position.
 \begin{itemize}
-\item All these requirements are satisfieds by \textbf{Reservation Manager} that can query the Database to see the positions. We can see that in the specific algorithm. We can see that in the UX Diagram where, if the user is logged in, he can go to the "PowerGrid Page" and insert a postion in the form: if the position isn't correct it shows an error message, otherwise it shows a summary with all the power grid stations on the map. 
+\item All these requirements are satisfied by \textbf{Reservation Manager} that can query the Database to see the positions. We can see that in the specific algorithm. We can see that in the UX Diagram where, if the user is logged in, he can go to the "Power Grid Page" and insert a position in the form: if the position isn't correct it shows an error message, otherwise it shows a summary with all the power grid stations on the map. 
 \end{itemize}
 \end{itemize}
 

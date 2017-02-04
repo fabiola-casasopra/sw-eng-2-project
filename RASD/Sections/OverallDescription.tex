@@ -2,7 +2,7 @@
 In this section, we will explain the product prospective and major functionality and also the characteristic of the user that we think he will use this application. Moreover, we will show all the constraints we have found and all the assumptions that we have made in order to make the requirements clear in all their parts. 
 
 \subsection{Product perspective} \label{subsec:prod_persp}
-Our application is a self-contained product based on a client interface, that helps the user to interact with this system. The application also uses an \acs{api} for the geolocation provided by \emph{\textbf{Google Maps}} because we need to know both the cars and user's positions. It is supported by common browser such as "\emph{Chrome}". It is also closely linked with a \acs{db} that contains all users and cars data, the list of safe areas and if there is a power grid station in there. Because of our assumptions, the system must collaborate with the motorization's system to check user's driving license and with an external society which provides the  insurance for the cars.The system must also collaborate with a Payment Service Provider that checks all the payment informations and makes transaction secure both for the user and for the software's owner.
+Our application is a self-contained product based on a client interface, that helps the user to interact with this system. The application also uses an \acs{api} for the geolocation provided by \emph{\textbf{Google Maps}} because we need to know both the cars and user's positions. It is supported by common browser such as "\emph{Chrome}". It is also closely linked with a \acs{db} that contains all users and cars data, the list of safe areas and if there is a power grid station in there. Because of our assumptions, the system must collaborate with the motorization's system to check user's driving license and with an external society which provides the  insurance for the cars. The system must also collaborate with a Payment Service Provider that checks all the payment information and makes transaction secure both for the user and for the software's owner.
 
 %Describes external interfaces: system, user, hardware, software; also operations and site adaptation, and hardware constraints
 
@@ -21,7 +21,7 @@ The user we expect will use our application is a person that wants to rent a car
 Our software must be used at the same time by a lot of users. It doesn't have to consume a lot of battery and memory since it will be used also on mobile. 
 For the complete development and functionality of our product, we need to know the position of the user. In order to do that, the user, when registering at our service, must agree with our policy of privacy; otherwise, he won't be able to use our software.
 %The policy of privacy is very important: in fact, if the user doesn't sign and approve the warranty of privacy, the system can't be used. Morover, it is a constraint for the system development because for the use of the application we must know the position of the user and that can't be done without the approval of the user. 
-Another constraint is that, since we use a Google \acs{api}, we must follow its regulation and developer guide.We must also follow the PCI Security Standard Council because we menage payment actions.
+Another constraint is that, since we use a Google \acs{api}, we must follow its regulation and developer guide. We must also follow the PCI Security Standard Council because we manage payment actions.
 
 %Anything that will limit the developer’s options (e.g. regulations, reliability, criticality, hardware limitations, parallelism, etc)
 
@@ -39,7 +39,7 @@ Another constraint is that, since we use a Google \acs{api}, we must follow its 
 \item During the registration we ask the user to insert his driving license's number: in this way the system can verify if it is valid or not.
 \item The system provides the opportunity to receive trough the e-mail the password, if the user doesn't remember it.
 \item The car's insurance is provided by an external society whereby we have stipulate a contract.
-\item All the payment actions are menaged by an external Payment Service Provider.
+\item All the payment actions are managed by an external Payment Service Provider.
 \end{enumerate}
 %domain assumptions
 

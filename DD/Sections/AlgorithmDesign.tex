@@ -2,7 +2,7 @@
 
 In the following section, we are going to show the reader some algorithms that we think they will be useful for the implementation of PowerEnjoy.
 In this document, only a first overview on the step of each algorithm will be presented, without further detailing the implementation aspects. Moreover, we are aware that optimization of the algorithm we are going to present are possible.
-However, we will discuss about this aspects in the next steps of the development of our system.
+However, we will discuss about these aspects in the next steps of the development of our system.
 
 \subsection{Look for near Safe Areas} \label{subsec:near-safe-area}
 
@@ -66,8 +66,8 @@ We also suppose to have a function \texttt{near(P)} that returns \texttt{true} i
 
 \subsection{Look for near Car} \label{subsec:near-car}
 
-In this subsection, we present an algorithm that describes how the system manages the research of reservable car near a certain position given by the user. 
-We first search the safe areas near the given position: for each safe area, if there are one or more reservable car, we add them to the near-car-list. Otherwise, if there are no PowerEnjoy cars or they havel been already reserved, we go on to the next near safe area.
+In this subsection, we present an algorithm that describes how the system manages the research of bookable car near a certain position given by the user. 
+We first search the safe areas near the given position: for each safe area, if there are one or more bookable car, we add them to the near-car-list. Otherwise, if there are no PowerEnjoy cars or they have been already reserved, we go on to the next near safe area.
 
 \vspace{80pt}
 \begin{algorithm}[h!tb]
@@ -97,27 +97,27 @@ We first search the safe areas near the given position: for each safe area, if t
 
 \clearpage
 
-\subsection{Discounts and Penalties Managment} \label{subsec:discount}
+\subsection{Discounts and Penalties Management} \label{subsec:discount}
 In this subsection, we present an algorithm that describes how the system manages the discounts and the penalties that may be applied to a reservation fee. 
 This function takes as input the reservation we want to be analyzed. 
 \begin{enumerate}
-\item[\textbf{--}]If the system have detected at least two passengers onto the car, there is a discount of $10\%$.
+\item[\textbf{--}]If the system has detected at least two passengers onto the car, there is a discount of $10\%$.
 \item[\textbf{--}]If the related car is left with at least $50\%$ of the battery charge, there is a discount of $20\%$.
 \item[\textbf{--}]If the related car is plugged into a power grid, there is a discount of $30\%$.
-\item[\textbf{--}]If the related car is left at more than $3$ Km from the nearest power grid station, there is a penalties of $30\%$.
-\item[\textbf{--}]If the related car is left with more than $80\%$ of the battery empty, there is a penalties of $30\%$.
+\item[\textbf{--}]If the related car is left at more than $3$ Km from the nearest power grid station, there is a penalty of $30\%$.
+\item[\textbf{--}]If the related car is left with more than $80\%$ of the battery empty, there is a penalty of $30\%$.
 \end{enumerate}
 We suppose that the discount and penalties can be combined, following the order presented above.
 Moreover, we make the hypothesis to have the function \texttt{isFar()}, that returns \texttt{true} if the distance between the car and the nearest power station is more than $3$ Km, \texttt{false} otherwise.
 \newline
 
 \begin{algorithm}[h!tb]
-\caption{\textsc{Discounts and Penalties Managment}}
+\caption{\textsc{Discounts and Penalties Management}}
 \label{alg:managment}
 \begin{algorithmic}[1]
 \begin{spacing}{1,2}
 \State R: \textit{we need to compute the final fee of reservation R}
-\Procedure{\textsc{Discounts and Penalties Managment}}{R}
+\Procedure{\textsc{Discounts and Penalties Management}}{R}
 \If{$R.passengers>2$}
 	\State{$R.fee \leftarrow R.fee-0.1R.fee$}
 \EndIf

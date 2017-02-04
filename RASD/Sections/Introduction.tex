@@ -18,12 +18,12 @@ Besides, the project manager can use this document to evaluate the costs and siz
 \subsection{Scope} \label{subsec:scope}
 The aim of the project %called 
 PowerEnJoy is to provide a car-sharing service that involves \textit{only} electric cars. All people who want to %share
-rent a car must be able to register to the system using credentials such as name, surname, e-mail, nickname and other anagraphic data. Moreover, they have to give valid driving licence information and valid payment information (i.e. number of credit card), that is needed %to pay
+rent a car must be able to register to the system using credentials such as name, surname, e-mail, nickname and other personal data. Moreover, they have to give valid driving licence information and valid payment information (i.e. number of credit card), that is needed %to pay
 for the payment
  %for
 of the service. 
 When a user receives the password to log in, he can find available cars in a specific location and, if he wants, he can reserve %it. 
-one of them. The system unlocks the car as soon as the user is nearby and keep him informed about the amount to pay for the service with a screen on the car; when the car is in one of the safe areas, indicated in a list that can be consulted on-line, the user can park. Once he exits from the car, the system locks it. The project has also the purpose to encouraged people to left at home their pollutants cars and take the electric car with other people: in fact, if there are at least two passengers with the driver, he has a 10 per cent discount on the last ride. If the user leaves the car in the safe area with more than half of the battery, he has a 20 per cent discount on the last ride and if he also plug the car into the power grid, he has 30 per cent discount, always on the last ride. However, if the user leaves the car far away from a power grid station or with more than 80 per cent of empty battery, the system charges 30 per cent more on the last ride in order to compensate for the cost required to re-charge the car on-site.
+one of them. The system unlocks the car as soon as the user is nearby and keep him informed about the amount to pay for the service with a screen on the car; when the car is in one of the safe areas, indicated in a list that can be consulted on-line, the user can park. Once he exits from the car, the system locks it. The project has also the purpose to encouraged people to left at home their pollutants cars and take the electric car with other people: in fact, if there are at least two passengers with the driver, he has a 10 per cent discount on the last ride. If the user leaves the car in the safe area with more than half of the battery, he has a 20 per cent discount on the last ride and if he also plugs the car into the power grid, he has 30 per cent discount, always on the last ride. However, if the user leaves the car far away from a power grid station or with more than 80 per cent of empty battery, the system charges 30 per cent more on the last ride in order to compensate for the cost required to re-charge the car on-site.
 
 %Identifies the product and application domain
 %Analysis of the world and of the shared phenomena
@@ -32,14 +32,14 @@ We supposed that our domain has this properties:
 \begin{itemize}
 \item[\textbf{D1}]The nickname and the e-mail are unique to identify an user.
 \item[\textbf{D2}]The e-mail must be syntactically correct and must correspond to an existing server.
-\item[\textbf{D3}]The car's position can be knowed thanks to GPS.
+\item[\textbf{D3}]The car's position can be known thanks to GPS.
 \item[\textbf{D4}]The charge is calculated considering time passed using the car, given a specific fee per minute.
-\item[\textbf{D5}]In the car there is a sensor that idicates how many people %there
+\item[\textbf{D5}]In the car there is a sensor that indicates how many people %there
  are in the car and another sensor which indicates the battery level.
 \item[\textbf{D6}]For each car there is an insurance.
 \item[\textbf{D7}]Reservation's time must be included between 00:00 and 23:59.
 \item[\textbf{D8}]The position inserted by the user must be an existing place.
-\item[\textbf{D9}]All the payment functionality, such as check if the credit car is valid and make the transaction secure, are provided by a Payment Service Provider.
+\item[\textbf{D9}]All the payment functionality, such as check if the credit card is valid and make the transaction secure, are provided by a Payment Service Provider.
 \end{itemize}
 
 
@@ -60,7 +60,7 @@ Now, we want to explain exhaustively what are our system's goal.
 \item[\textbf{G5}] The system must be able to allow user to reserve a car up to one hour before it is picked up.
 \item[\textbf{G6}] If the user is near his reserved car the system must unlock it.
 \item[\textbf{G7}] The system must be able to charge the user and shows all transaction's details.
-\item[\textbf{G8}] The system must be able to keep informed the user about the charge trough a display in the car.
+\item[\textbf{G8}] The system must be able to keep informed the user about the charge through a display in the car.
 \item[\textbf{G9}] The system must inform the user about the reservation timer. If the user not pick up the car after one hour from the registration, the system must be able to delete the registration giving a fee of 1 euro to the user.
 \item[\textbf{G10}] The system must allow user to delete a reservation before one hour is passed.
 \item[\textbf{G11}] If a registration is deleted the system must be able to make the car available.
@@ -79,21 +79,21 @@ Now, we want to explain exhaustively what are our system's goal.
 The following part is necessary for avoid ambiguity or misunderstanding during the reading of this document. 
 \begin{itemize}
 \item VISITOR: he is a person that is not register in the system. He can only see the homepage and go to the form for the registration or log-in.
-\item USER: he is a person that is registered and logged in the system. He is identified by a name, surname, nickname, e-mail, password (given by the system at the end of the registration), telephone number, address, driving license information and all the payment information (such as number of credit card and card's deadline) that must be verified by the interaction between the system and the Payment Service Provider. He can do all the services that are provided by "\emph{PowerEnJoy}".His position is knowed using the GPS.
-\item CAR: we intend an electric car that can be rent trough the system. It can be available or reserved and the system will lock and unlock it when necessary. It is parked in a safe area and it may be plugged into a power grid station.The system knows its position thanks to the use of GPS.
+\item USER: he is a person that is registered and logged in the system. He is identified by a name, surname, nickname, e-mail, password (given by the system at the end of the registration), telephone number, address, driving license information and all the payment information (such as number of credit card and card's deadline) that must be verified by the interaction between the system and the Payment Service Provider. He can do all the services that are provided by "\emph{PowerEnJoy}". His position is known using the GPS.
+\item CAR: we intend an electric car that can be rent through the system. It can be available or reserved and the system will lock and unlock it when necessary. It is parked in a safe area and it may be plugged into a power grid station. The system knows its position thanks to the use of GPS.
 \item RIDE: we intend all the route that a user accomplishes with the same car from the moment when he pick up the car to the moment when he left it in a safe area.   
-\item CHARGE: we intend the debt that the user must pay at the end of a ride. It is calculate from a specific amount of money per minute: the timer starts at the begin of the ride until the end of it. The charge can be also modified by some discount or a fee when particular situations occur. It also exists a charge if the user reserve a car but he doen't pick it up whithin one hour from the reservation.  
+\item CHARGE: we intend the debt that the user must pay at the end of a ride. It is calculated from a specific amount of money per minute: the timer starts at the begin of the ride until the end of it. The charge can be also modified by some discount or a fee when particular situations occur. It also exists a charge if the user reserve a car but he doens't pick it up within one hour from the reservation.  
 
 \end{itemize}
 
 \subsubsection{Acronyms} \label{acr}
-Here there is the acronims list:
+Here there is the acronyms list:
 
 %------------Acronyms----------
 \begin{acronym}[RASD] %put here the first acronym
 
 \acro{rasd}[RASD]{Requirements Analysis and Specifications Document}
-\acro{uml}[UML]{Unified Modeling Language}
+\acro{uml}[UML]{Unified Modelling Language}
 \acro{api}[API]{Application Programming Interface}
 \acro{db}[DB]{DataBase}
 \acro{os}[OS]{Operating System}
@@ -114,8 +114,8 @@ This document is structured in five parts:
 \begin{itemize}
 \item[\textbf{Section \ref{sec:intro}}]There is an introduction with this document's purpose, the scope of this project and its aim, the actor that can use the system and in which way, some definitions to avoid misunderstanding during the reading of the document and, most important, the goal of our project described all in a brief but comprehensive way.  
 \item[\textbf{Section \ref{sec:description}}]There are more specifications about the requirements, the interfaces with external agents, constraints and assumptions.
-\item[\textbf{Section \ref{sec:spec_requirements}}]It is very important because there are all the models for the requirement. They are modeled using \acs{uml} diagrams such as \emph{Use Case} and \emph{Sequence Diagram}
-\item[\textbf{Section \ref{sec:alloy}}]There is a modelization of the problem using Alloy. Together with the \acs{uml}, they are very important to understand all the functionality of the system.  
+\item[\textbf{Section \ref{sec:spec_requirements}}]It is very important because there are all the models for the requirement. They are modelled using \acs{uml} diagrams such as \emph{Use Case} and \emph{Sequence Diagram}
+\item[\textbf{Section \ref{sec:alloy}}]There is a modelling of the problem using Alloy. Together with the \acs{uml}, they are very important to understand all the functionality of the system.  
 \item[\textbf{Section \ref{sec:appendix}}]There is the Appendix with information on the tools used and the hour spent by all of us to redact this document.
 \end{itemize}
 %￼￼Describes contents and structure of the remainder of the RASD
