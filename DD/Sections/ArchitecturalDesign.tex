@@ -31,15 +31,27 @@ All the application logic resides here under the form of Enterprise Java Beans a
 \clearpage
 
 \subsection{Interactions with External Components} \label{subsec:comp-extern}
-The diagram in Figure \ref{fig:connection} shows the interactions between our system and all the external components, that are the \textbf{Mapping Service}, the \textbf{Bank} and the \textbf{Car System}.
+The diagram in Figure \ref{fig:connection} shows the interactions between our system, in paricular the \textbf{Business-tier} and all the external components, that are the \textbf{Mapping Service}, the \textbf{Bank} and the \textbf{Car System}.
+In all the three cases, the communication between the components is done using the \acs{https} protocol, in order to ensure the security of the data.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{Images/Connection}
-\caption{Interactions between our system and the external components}
+\caption{Interactions between PowerEnjoy and the external components}
 \label{fig:connection}
 \end{figure}
 \clearpage
+
+Here, we are going to show a more detailed view, but always remainig at higl-level, on how the interaction with the \textbf{Bank} is implemented.
+
+\vspace{30pt}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{Images/Bank}
+\vspace{10pt}
+\caption{Interactions between PowerEnjoy and the bank}
+\label{fig:bank}
+\end{figure}
 
 \clearpage
 
@@ -51,7 +63,7 @@ The diagram in Figure \ref{fig:high-comp} shows the conceptual high level archit
 \centering
 \includegraphics[width=0.85\textwidth]{Images/HighLevelComponents.pdf}
 \vspace{10pt}
-\caption{High Level Components and their Interaction of PowerEnjoy}
+\caption{PowerEnjoy High Level Components and their Interactions}
 \label{fig:high-comp}
 \end{figure}
 \clearpage
